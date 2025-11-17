@@ -1,0 +1,43 @@
+* {
+  direction: rtl;
+}
+
+:root {
+  --success-dark : rgb(19, 80, 19);
+  --success-light : rgb(78, 133, 78);
+}
+.mt-200{
+  margin-top: 200px;
+}
+.pt-200{
+  padding-top: 200px;
+}
+.bg-success-dark{
+  background-color: var(--success-dark);
+}
+.text-success-dark{
+  color: var(--success-dark);
+}
+.btn-success-dark{
+  background-color: var(--success-dark);
+  color: white !important;
+}
+.btn-success-dark:hover, .btn-success-dark:disabled{
+  background-color: var(--success-light) !important;
+}
+
+.navbar a ,.navbar button  {
+  color: white !important;
+  transition: all 0.3s ease;  
+}
+.navbar a:hover ,.navbar button:hover  {
+  color: rgba(255, 255, 255, 0.712) !important ;
+  background-color: var(--bg-success-dark);
+}
+.nav-item {
+  text-align: center !important;
+}
+
+main{
+  height: 100vh;
+}
