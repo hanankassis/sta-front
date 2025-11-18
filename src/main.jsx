@@ -9,6 +9,7 @@ import './style.css';
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    {/* {<h1>Hello</h1>} */}
     <RouterProvider router={router} />
   </StrictMode>
 );
