@@ -1,6 +1,6 @@
 import  { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { login as apiLogin } from '../../services/auth'
+import { login as apiLogin } from '../../../services/auth'
 
 
 const Login = () => {
@@ -14,9 +14,9 @@ const Login = () => {
     setLoading(true)
     try {
       const data = await apiLogin({ email, password });
-      if (data.type  = 'admin' )
+      if (data.type  == 'admin' )
         navigate('/admin')
-      else if (data.type  = 'provider' )
+      else if (data.type  == 'provider' )
         navigate('/provider')
       else
         navigate('/')
@@ -28,8 +28,8 @@ const Login = () => {
   }
 
   return (
-    <div className="d-flex justify-content-center align-items-center " >
-      <form className="w-50 p-5 border border-success mt-200" style={{minWidth: 320}} onSubmit={submit}>
+    <div className="auth-form d-flex justify-content-center align-items-center" >
+      <form className="w-50 p-5 border border-white mt-200 mb-5" style={{minWidth: 320}} onSubmit={submit}>
         <h4 className="mb-3">تسجيل دخول</h4>
         <input type="email" className="form-control mb-3" placeholder="البريد الالكتروني" value={email} onChange={e=>setEmail(e.target.value)} />
         <input type="password" className="form-control mb-4" placeholder="كلمة المرور" value={password} onChange={e=>setPassword(e.target.value)} />

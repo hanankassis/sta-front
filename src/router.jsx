@@ -1,27 +1,29 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import ProviderDashboard from "./pages/provider/ProviderDashboard";
 import NotFound from "./pages/NotFound";
-import Login from "./components/auth/Login";
-import Register from "./components/auth/Register";
-import HomeHeader from './components/Home/HomeHeader'
+import Home from "./pages/home/Home";
+import Login from "./pages/home/partials/Login";
+import Register from "./pages/home/partials/Register";
+import ServiceTypes from "./pages/Admin/partials/ServiceTypes";
+import AdminHome from "./pages/Admin/partials/Home";
+import Main from "./pages/home/partials/Main";
 
 const router = createBrowserRouter([
   {
     path: "/",
-        element: <Home />,
+    element: <Home />,
     children: [
       {
         index: true,
-        element: <HomeHeader />,
+        element: <Main />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register />,
       },
     ],
@@ -29,6 +31,16 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <AdminDashboard />,
+    children: [
+      {
+        index: true,
+        element: <AdminHome />,
+      },
+      {
+        path: "service-types",
+        element: <ServiceTypes />,
+      },
+    ],
   },
   {
     path: "/provider",

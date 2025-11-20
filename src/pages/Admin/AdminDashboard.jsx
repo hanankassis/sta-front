@@ -2,17 +2,11 @@ import React, { useState } from 'react'
 import AdminHeader from '../../components/Admin/AdminHeader'
 import AdminSidebar from '../../components/Admin/AdminSidebar'
 import SharedFooter from '../../components/Shared/SharedFooter'
-import AdminHome from './partials/AdminHome'
-import ServiceTypesPage from './partials/ServiceTypesPage'
+import { Outlet } from 'react-router-dom'
 
 export default function AdminDashboard() {
-  const [view, setView] = useState('home')
-  const [serviceTypes, setServiceTypes] = useState([])
   const [sidebarOpen, setSidebarOpen] = useState(true)
 
-  function handleSelect(key){
-    setView(key)
-  }
 
   // service CRUD handled in ServiceTypesPage via setServiceTypes
 
@@ -23,19 +17,14 @@ export default function AdminDashboard() {
 
   return (
     <div style={{minHeight:'100vh',display:'flex',flexDirection:'column'}} dir="rtl">
-      <AdminHeader onLogout={handleLogout} onToggleSidebar={()=>setSidebarOpen(s=>!s)} sidebarOpen={sidebarOpen} />
+      {/* <AdminHeader onLogout={handleLogout} onToggleSidebar={()=>setSidebarOpen(s=>!s)} sidebarOpen={sidebarOpen} /> */}
+      <AdminHeader  onToggleSidebar={()=>setSidebarOpen(s=>!s)}/>
 
       <div className="admin-layout">
-        <AdminSidebar onSelect={handleSelect} active={view} collapsed={!sidebarOpen} />
+        <AdminSidebar collapsed={!sidebarOpen} />
 
         <main className="admin-main">
-          {view === 'home' && (
-            <AdminHome serviceCount={serviceTypes.length} />
-          )}
-
-          {view === 'serviceTypes' && (
-            <ServiceTypesPage serviceTypes={serviceTypes} setServiceTypes={setServiceTypes} />
-          )}
+          <Outlet/>
         </main>
       </div>
 

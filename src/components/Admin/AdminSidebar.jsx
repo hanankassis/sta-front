@@ -1,29 +1,38 @@
-import React from 'react'
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
-const AdminSidebar = ({ onSelect = () => {}, active = 'home', collapsed = false }) => {
+const AdminSidebar = ({
+  onSelect = () => {},
+  active = "home",
+  collapsed = false,
+}) => {
   const items = [
-    { key: 'home', label: 'لوحة القيادة', icon: '🏠' },
-    { key: 'serviceTypes', label: 'أنواع الخدمات', icon: '🧾' },
-    { key: 'providers', label: 'المزودون', icon: '👥' },
-    { key: 'settings', label: 'الإعدادات', icon: '⚙️' }
-  ]
+    { key: "home", label: "لوحة القيادة", icon: "🏠" , path:"/admin"},
+    { key: "serviceTypes", label: "أنواع الخدمات", icon: "🧾" ,  path:"service-types"},
+    { key: "providers", label: "المزودون", icon: "👥" ,path:"/#"},
+    { key: "settings", label: "الإعدادات", icon: "⚙️" ,path:"/#"},
+  ];
 
   return (
-    <aside className="admin-sidebar" dir="rtl" style={{display: collapsed ? 'none' : 'block'}}>
+    <aside
+      className="admin-sidebar"
+      dir="rtl"
+      style={{ display: collapsed ? "none" : "block" }}
+    >
       <nav>
         <ul>
-          {items.map(i=> (
-            <li key={i.key}>
-              <button className={`item ${i.key===active? 'active':''}`} onClick={()=>onSelect(i.key)}>
-                <span style={{marginLeft:8}}>{i.icon}</span>
+          {items.map((i) => (
+            <li key={i.key} >             
+              <NavLink to={i.path} className="btn item" end >
+                <span style={{ marginLeft: 8 }}>{i.icon}</span>
                 <span>{i.label}</span>
-              </button>
+              </NavLink>
             </li>
           ))}
         </ul>
       </nav>
     </aside>
-  )
-}
+  );
+};
 
-export default AdminSidebar
+export default AdminSidebar;

@@ -1,28 +1,33 @@
-import React from 'react'
-import { logout as apiLogout } from "../../services/auth";
+import { logout, currentUser as username } from "../../services/auth";
+import { useNavigate } from 'react-router-dom';
 
-const AdminHeader = ({ onLogout, onToggleSidebar }) => {
-  const username = 'Admin User';
+const AdminHeader = ({onToggleSidebar}) => {
   const projectName = 'مشروع سياحي ذكي';
-  const logoutFn = onLogout || apiLogout
   const toggle = onToggleSidebar || (()=>{})
-  const open = typeof onToggleSidebar === 'function' ? (typeof window !== 'undefined' && window.sidebarOpen) : undefined
+  const navigator = useNavigate();  
+  // const open = typeof onToggleSidebar === 'function' ? (typeof window !== 'undefined' && window.sidebarOpen) : undefined
+
+  const logoutFn = () => {
+    logout();
+    navigator('/');
+  }
 
   // prefer explicit prop if provided
-  const icon = (typeof arguments !== 'undefined' && typeof arguments[0] === 'object' && arguments[0]?.sidebarOpen) ? (arguments[0].sidebarOpen ? '◀' : '☰') : '◀'
+  // const icon = (typeof arguments !== 'undefined' && typeof arguments[0] === 'object' && arguments[0]?.sidebarOpen) ? (arguments[0].sidebarOpen ? '◀' : '☰') : '◀'
 
   return (
-    <header className="admin-header" dir="rtl">
+    <nav className="admin-header" dir="rtl">      
+      <div className="brand">
+        <button className="btn btn-success" onClick={toggle} aria-label="toggle-sidebar" title="إظهار/إخفاء الشريط الجانبي"><i className='fa fa-arrow-left'></i></button>
+        <h1 className='title'>{projectName} إدارة</h1>
+      </div>
+      
       <div className="controls">
-        <button className="btn btn-success" onClick={toggle} aria-label="toggle-sidebar" title="إظهار/إخفاء الشريط الجانبي">{icon}</button>
-        <div style={{fontWeight:700}}>{username}</div>
+      
+        <div style={{fontWeight:700}}>{username()}</div>
         <button className="btn logout" onClick={logoutFn}>تسجيل خروج</button>
       </div>
-
-      <div className="brand">
-        <div style={{fontWeight:700,fontSize:18}}>{projectName} إدارة</div>
-      </div>
-    </header>
+    </nav>
   )
 }
 

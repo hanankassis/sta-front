@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { categories } from '../../../services/api'
 
-const ServiceTypesPage = ({ serviceTypes = [], setServiceTypes }) => {
+const ServiceTypes = () => {
+    const [serviceTypes, setServiceTypes] = useState([])
   const [showForm, setShowForm] = useState(false)
   const [formName, setFormName] = useState('')
   const [editingId, setEditingId] = useState(null)
@@ -135,4 +136,4 @@ const ServiceTypesPage = ({ serviceTypes = [], setServiceTypes }) => {
   )
 }
 
-export default ServiceTypesPage
+export default ServiceTypes

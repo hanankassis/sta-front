@@ -11,7 +11,7 @@ export default function HomeNav() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-success-dark fixed-top  fs-5">
+    <nav className="navbar navbar-expand-lg  fixed-top  fs-5">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -51,12 +51,12 @@ export default function HomeNav() {
         <ul className="navbar-nav align-items-center  ">
           <li className="nav-item">
             <input
-              className="form-control form-control ms-3"
+              className="form-control form-control ms-5"
               placeholder="بحث عن خدمة"
             />
           </li>
           {user ? (
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown me-5">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"  
@@ -68,10 +68,16 @@ export default function HomeNav() {
               </a>
               <ul className="dropdown-menu  bg-success-dark">
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="#">
                     الملف الشخصي
-                  </a>
-                </li>
+                  </Link>
+                </li>                
+                <li>
+                  <Link className="dropdown-item " to="/admin">
+                    إدارة الموقع
+                  </Link>
+                </li>                
+                
                 <li>
                   <hr className="dropdown-divider" />
                 </li>

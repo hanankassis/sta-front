@@ -1,15 +1,14 @@
 // src/services/api.js
 import axios from "axios";
 
-/* set laravel URL */
+/* get from .env laravel URL */
 const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000/api";
-const token = localStorage.getItem("token");
+
 // إعداد axios الأساسي مع التهيئات اللازمة
 const api = axios.create({
   baseURL: API_BASE,
   timeout: 10000,
   headers: {
-    // Use Bearer scheme when token exists
     "Content-Type": "application/json",
   },
 });
@@ -22,18 +21,6 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
-
-// Interceptor للتعامل مع الأخطاء (مثل 401 لإعادة التوجيه)
-api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response?.status === 401) {
-      // إعادة توجيه إلى تسجيل الدخول أو إعادة تحميل الصفحة
-      window.location.href = '/login';
-    }
-    return Promise.reject(error);
-  }
-);
 
 
 // دالة مساعدة للتعامل مع الاستجابات  
