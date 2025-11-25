@@ -9,6 +9,7 @@ const AdminSidebar = ({
   const items = [
     { key: "home", label: "لوحة القيادة", icon: "🏠" , path:"/admin"},
     { key: "serviceTypes", label: "تصنيف الخدمات", icon: "🧾" ,  path:"service-types"},
+    { key: "pereferences", label: "إدارة التفضيلات", icon: "💜" ,path:"preferences"},
     { key: "providers", label: "إدارة المزودين", icon: "👥" ,path:"/#"},
     { key: "settings", label: " إعدادات المنصة", icon: "⚙️" ,path:"/#"},
   ];

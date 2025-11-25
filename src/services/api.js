@@ -75,3 +75,33 @@ export const categories = {
     return makeApiRequest('delete', `/categories/${id}`)
   }
 }
+
+
+/*********************** preferences ******************** */
+export const preferences = {
+  // GET /preferences
+  list: async () => makeApiRequest('get', '/preferences'),
+
+  // GET /preferences/:id
+  get: async (id) => {
+    if (!id) throw new Error('id is required')
+    return makeApiRequest('get', `/preferences/${id}`)
+  },
+
+  // POST /preferences
+  create: async (data) => {
+    return makeApiRequest('post', '/preferences', data)
+  },
+
+  // PUT /preferences/:id
+  update: async (id, data) => {
+    if (!id) throw new Error('id is required')
+    return makeApiRequest('put', `/preferences/${id}`, data)
+  },
+
+  // DELETE /preferences/:id
+  remove: async (id) => {
+    if (!id) throw new Error('id is required')
+    return makeApiRequest('delete', `/preferences/${id}`)
+  }
+}

@@ -89,7 +89,7 @@ const ServiceTypes = () => {
   return (
     <section>
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-        <h2 style={{margin:0}}>إدارة أنواع الخدمات</h2>
+        <h4 style={{margin:0}}>إدارة أنواع الخدمات</h4>
         <div>
           <button onClick={handleAddClick} className="btn btn-success">إضافة نوع خدمة</button>
         </div>

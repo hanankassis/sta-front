@@ -8,6 +8,7 @@ import Register from "./pages/home/partials/Register";
 import ServiceTypes from "./pages/Admin/partials/ServiceTypes";
 import AdminHome from "./pages/Admin/partials/Home";
 import Main from "./pages/home/partials/Main";
+import Perefernces from "./pages/Admin/partials/Preferences";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "service-types",
         element: <ServiceTypes />,
+      },
+      {
+        path: "preferences",
+        element: <Perefernces />,
       },
     ],
   },
