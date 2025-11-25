@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import AdminHeader from '../../components/Admin/AdminHeader'
-import AdminSidebar from '../../components/Admin/AdminSidebar'
+import AdminHeader from '../../components/admin/AdminHeader'
+import AdminSidebar from '../../components/admin/AdminSidebar'
 import SharedFooter from '../../components/Shared/SharedFooter'
 import { Outlet } from 'react-router-dom'
 

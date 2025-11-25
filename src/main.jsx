@@ -6,6 +6,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js"; // استيراد Bootstrap 
 import "font-awesome/css/font-awesome.min.css";
 import router from "./router.jsx"; // استيراد الموجه من ملف router.jsx
 import './style.css';
+import './design-system.css';
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

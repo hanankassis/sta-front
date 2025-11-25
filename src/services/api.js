@@ -44,6 +44,9 @@ export const auth = {
   logoutUser: async () => makeApiRequest('post' , '/logout'),    
 };
 
+/*********************** get countries ******************** */
+export const countries = async () => makeApiRequest('get', '/countries');
+
 /*********************** Services type (Categories) ******************** */
 export const categories = {
   // GET /categories

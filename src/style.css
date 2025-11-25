@@ -2,14 +2,9 @@
   direction: rtl;
 }
 
-:root {
-  --success-dark: rgb(19, 80, 19);
-  --success-light: rgb(78, 133, 78);
-  --success-light-x2: rgb(187, 224, 187);
-  --success-light-x3: rgb(217, 240, 217);
-}
-.mt-200 {
-  margin-top: 200px;
+
+.mt-100 {
+  margin-top: 100px;
 }
 .pt-200 { 
   padding-top: 200px;
@@ -20,22 +15,29 @@
 .text-success-dark {
   color: var(--success-dark);
 }
-.btn-success-dark {
-  background-color: var(--success-dark);
+.text-secondary {
+  color: var(--secondary-light) !important;
+}
+.btn-success-light {
+  background-color: var(--secondary-light) !important;
+
+  color: var(--success-dark) !important;
+}
+.btn-success-light:hover,
+.btn-success-light:disabled {
+  background-color: var(--success-light) !important;
   color: white !important;
 }
-.btn-success-dark:hover,
-.btn-success-dark:disabled {
-  background-color: var(--success-light) !important;
+.btn-outline-success {
+  background-color: var(--success-light-x2);
 }
-
 .navbar a,
 .navbar button {
   color: white !important;
 }
 .navbar a:hover,
 .navbar button:hover , .dropdown-item:hover {
-  color: rgb(234, 241, 133) !important ;
+  color: var(--secondary-light) !important ;
   background-color: transparent !important;
   font-weight: 700;
 }
@@ -53,21 +55,21 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image:linear-gradient(var(--success-dark)  , 30%, rgb(234, 241, 133) 45% 55%, var(--success-dark)) ;
+  background-image:var(--gradient-primary) ;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 /********** services **********/
 #services {
   padding: 150px  0 !important;
   height: calc(100vh - 99px);
-  background-image:linear-gradient(rgba(0, 0, 0, 0)  , rgb(234, 241, 133) );
-
-  /* background-color: rgb(234, 241, 133); */
+  background-image:var(--gradient-secondary) ;
+}
+#services h2 {
+  color: var(--secondary-light);
+  font-size: 2.5em;
 
 }
-
 #services .card {
   padding: 2em;
   transition: 0.5s;
@@ -80,10 +82,6 @@ header {
 #services .card:hover h3 {
   color: var(--success-dark-color) !important;
   font-size: 1.8em;
-}
-/********** footer **********/
-footer {
-  padding: 50px 0 !important;
 }
 
 /* Admin area styles */
@@ -134,10 +132,24 @@ footer {
   border: none;
 }
 
-
 /* ****** authform*********** */
-.auth-form{
+.select-multiple{
+  color: black !important;
+}
+.auth-form {
   background-color: var(--success-light);
+  font-size: 1em;
+  min-height: 80vh;
+}
+.auth-form  form{
+  border: solid 1px var(--secondary-light) !important;  
+  position: relative;
+  background-color: var(--success-dark);
+  z-index: 9999;
+}
+.auth-form label{
+  font-size: 1.2em;
+  margin-bottom: .5em;
 }
 /* ****** sidebar*********** */
 .admin-layout {
@@ -191,21 +203,25 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
-  margin-top: 12px;
+  margin-top: 12px;  
 }
 .admin-card {
   background: #fff;
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);  
 }
 .admin-card .label {
-  font-size: 12px;
-  color: #888;
+  font-size: 20px;
+  /* color: #888; */
+  font-weight: 600;
 }
 .admin-card .value {
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 700;
+}
+.admin-icon{
+  font-size: 3.5em;
 }
 
 .btn {
@@ -265,10 +281,12 @@ footer {
 
 
 /* ************** footer ********** */
+
 .footer {
   line-height: 2;
-  background: var(--success-dark) !important;
-  padding: var(--spacing-3xl) 0 var(--spacing-xl);
+  background: var(--success-light) !important;
+  padding: 50px 0 !important;
+  font-size: 1.3em;
 }
 
 .footer-grid {

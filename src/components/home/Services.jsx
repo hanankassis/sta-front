@@ -21,7 +21,7 @@ export default function Services() {
     <div id="services" className="container-fluid">
       <div className="container">
         <div className="text-center">
-          <h2 className="mb-5 text-success-dark">الخدمات الرئيسية </h2>
+          <h2 className="mb-5">الخدمات الرئيسية </h2>
         </div>
         <div className="row g-5 align-items-center text-center">
             {servicesData.map((service, index) => (

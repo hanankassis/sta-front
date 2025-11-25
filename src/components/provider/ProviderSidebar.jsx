@@ -7,10 +7,10 @@ const AdminSidebar = ({
   collapsed = false,
 }) => {
   const items = [
-    { key: "home", label: "لوحة القيادة", icon: "🏠" , path:"/admin"},
-    { key: "serviceTypes", label: "تصنيف الخدمات", icon: "🧾" ,  path:"service-types"},
-    { key: "providers", label: "إدارة المزودين", icon: "👥" ,path:"/#"},
-    { key: "settings", label: " إعدادات المنصة", icon: "⚙️" ,path:"/#"},
+    { key: "home", label: "الصفحة الرئيسية", icon: "🏠" , path:"/admin"},
+    { key: "serviceTypes", label: "إدارة الخدمات", icon: "🧾" ,  path:"service-types"},
+    { key: "providers", label: "المزودون", icon: "👥" ,path:"/#"},
+    { key: "settings", label: "الإعدادات", icon: "⚙️" ,path:"/#"},
   ];
 
   return (

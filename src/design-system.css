@@ -1,0 +1,45 @@
+/* ═══════════════════════════════════════════════════════════════
+   منصة بنائك - نظام التصميم الشامل
+   Design System v1.0
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   1. المتغيرات الأساسية - Colors & Typography
+   ─────────────────────────────────────────────────────────────── */
+
+  /* الألوان الأساسية */  
+  :root {
+  --success-dark: rgb(71, 119, 71);
+  --success-dark-0: rgb(59, 129, 59);
+  --success-light: rgb(78, 133, 78);
+  --success-light-x1: rgb(88, 134, 88);
+  --success-light-x2: rgb(187, 224, 187);
+  --success-light-x3: rgb(217, 240, 217);
+
+  --secondary-light : rgb(234, 241, 133);
+
+  
+  /* ألوان الخلفيات */
+  --bg-white: #ffffff;
+  --bg-light: #f8f9fa;
+  --bg-lighter: #f0f2f5;
+  --bg-gray: #ecf0f1;
+  
+  /* ألوان النصوص */
+  --text-dark: #203145;            /* نص أساسي */
+  --text-muted: #7f8c8d;           /* نص فاتح */
+  --text-light: #8aaaca;           /* نص خفيف جداً */
+  
+  /* الحدود والظلال */
+  --border-color: #ddd;
+  --border-light: #e8e8e8;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
+  
+  /* التدرجات */
+  --gradient-primary: linear-gradient(var(--success-dark)  , var(--secondary-light) 45% 55%, var(--success-light) );
+  --gradient-secondary: linear-gradient(  var(--success-light) 20% , var(--secondary-light) 100%);
+  --gradient-light: linear-gradient(rgba(0, 0, 0, 0)  , var(--secondary-light) );
+  }
