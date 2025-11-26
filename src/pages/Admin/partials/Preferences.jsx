@@ -71,7 +71,6 @@ const Preferences = () => {
         // إضافة جديد
       } else {
         const created = await apiPreferences.create({ name: formData.name, type: formData.type });
-        // prepend created (backend should return created record)
         setPreferences((prev) => [created, ...prev]);
         alert("تم الإضافة بنجاح");
       }
@@ -118,7 +117,7 @@ const Preferences = () => {
       >
         <h4 style={{ margin: 0 }}>إدارة المفضلات</h4>
         <div>
-          <button onClick={handleAddClick} className="btn btn-success">
+          <button onClick={handleAddClick} className="btn btn-success-light">
             إضافة مفضلة
           </button>
         </div>
@@ -149,7 +148,7 @@ const Preferences = () => {
                     />
             <button
               onClick={handleSave}
-              className="btn btn-success ms-2"
+              className="btn btn-success-light ms-2"
               disabled={saving}
             >
               {saving ? "جاري الحفظ..." : "حفظ"}
@@ -207,7 +206,7 @@ const Preferences = () => {
                   <td>
                     <button
                       onClick={() => handleEdit(s)}
-                      className="btn btn-success ms-2"
+                      className="btn btn-success-light ms-2"
                     >
                       تعديل
                     </button>

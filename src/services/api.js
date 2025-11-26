@@ -50,29 +50,29 @@ export const countries = async () => makeApiRequest('get', '/countries');
 /*********************** Services type (Categories) ******************** */
 export const categories = {
   // GET /categories
-  list: async () => makeApiRequest('get', '/categories'),
+  list: async () => makeApiRequest('get', '/admin/categories'),
 
   // GET /categories/:id
   get: async (id) => {
     if (!id) throw new Error('id is required')
-    return makeApiRequest('get', `/categories/${id}`)
+    return makeApiRequest('get', `/admin/categories/${id}`)
   },
 
   // POST /categories
   create: async (data) => {
-    return makeApiRequest('post', '/categories', data)
+    return makeApiRequest('post', '/admin/categories', data)
   },
 
   // PUT /categories/:id
   update: async (id, data) => {
     if (!id) throw new Error('id is required')
-    return makeApiRequest('put', `/categories/${id}`, data)
+    return makeApiRequest('put', `/admin/categories/${id}`, data)
   },
 
   // DELETE /categories/:id
   remove: async (id) => {
     if (!id) throw new Error('id is required')
-    return makeApiRequest('delete', `/categories/${id}`)
+    return makeApiRequest('delete', `/admin/categories/${id}`)
   }
 }
 
@@ -80,28 +80,36 @@ export const categories = {
 /*********************** preferences ******************** */
 export const preferences = {
   // GET /preferences
-  list: async () => makeApiRequest('get', '/preferences'),
+  list: async () => makeApiRequest('get', '/admin/preferences'),
 
   // GET /preferences/:id
   get: async (id) => {
     if (!id) throw new Error('id is required')
-    return makeApiRequest('get', `/preferences/${id}`)
+    return makeApiRequest('get', `/admin/preferences/${id}`)
   },
 
   // POST /preferences
   create: async (data) => {
-    return makeApiRequest('post', '/preferences', data)
+    return makeApiRequest('post', '/admin/preferences', data)
   },
 
   // PUT /preferences/:id
   update: async (id, data) => {
     if (!id) throw new Error('id is required')
-    return makeApiRequest('put', `/preferences/${id}`, data)
+    return makeApiRequest('put', `/admin/preferences/${id}`, data)
   },
 
   // DELETE /preferences/:id
   remove: async (id) => {
     if (!id) throw new Error('id is required')
-    return makeApiRequest('delete', `/preferences/${id}`)
+    return makeApiRequest('delete', `/admin/preferences/${id}`)
   }
 }
+/*********************** preferences ******************** */
+export const providers =  {
+
+  list: async (data) => makeApiRequest('get', '/admin/providers' , data),
+  toggleState: async (id) => makeApiRequest('patch', `/admin/providers/${id}` ),
+}
+
+  

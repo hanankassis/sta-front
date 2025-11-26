@@ -7,28 +7,18 @@ export default function SharedFooter() {
             <div className="footer-grid">
                 <div className="footer-section">
                     <h4>عن المنصة</h4>
-                    <p>منصة بنائك هي المنصة الأولى للخدمات الهندسية والعمارية في المنطقة</p>
+                    <p>منصة مساعد سياحي ذكي تتيح لك التعرف على أجمل المعالم السياحية في سوريا </p>
                 </div>
 
                 <div className="footer-section">
                     <h4>روابط سريعة</h4>
                     <ul>
-                        <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#projects">المشاريع</a></li>
-                        <li><a href="#services">الخدمات</a></li>
-                        <li><a href="#contact">اتصل بنا</a></li>
+                        <li><a href="home">الرئيسية</a></li>
+                        <li><a href="offer">العروض</a></li>
+                        <li><a href="services">الخدمات</a></li>
+                        <li><a href="contact">اتصل بنا</a></li>
                     </ul>
-                </div>
-
-                <div className="footer-section">
-                    <h4>الخدمات</h4>
-                    <ul>
-                        <li><a href="#">التصميم المعماري</a></li>
-                        <li><a href="#">الإشراف الهندسي</a></li>
-                        <li><a href="#">الاستشارات</a></li>
-                        <li><a href="#">دراسات الجدوى</a></li>
-                    </ul>
-                </div>
+                </div>                
 
                 <div className="footer-section">
                     <h4>تواصل معنا</h4>
@@ -43,7 +33,7 @@ export default function SharedFooter() {
                     </p>
                     <p>
                         <i className="fa fa-envelope"></i>
-                        <a href="mailto:info@bs.com"> info@bs.com </a>
+                        <a href="mailto:info@sta.com"> info@sta.com </a>
                     </p>
                     <div className="social-links">
                         <a href="#"><i className="fa fa-facebook"></i></a>

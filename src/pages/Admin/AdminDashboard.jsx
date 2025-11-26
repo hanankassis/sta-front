@@ -5,20 +5,11 @@ import SharedFooter from '../../components/Shared/SharedFooter'
 import { Outlet } from 'react-router-dom'
 
 export default function AdminDashboard() {
-  const [sidebarOpen, setSidebarOpen] = useState(true)
-
-
-  // service CRUD handled in ServiceTypesPage via setServiceTypes
-
-  function handleLogout(){
-    // placeholder - integrate real logout
-    alert('تسجيل خروج')
-  }
+  const [sidebarOpen, setSidebarOpen] = useState(true)  
 
   return (
     <div style={{minHeight:'100vh',display:'flex',flexDirection:'column'}} dir="rtl">
-      {/* <AdminHeader onLogout={handleLogout} onToggleSidebar={()=>setSidebarOpen(s=>!s)} sidebarOpen={sidebarOpen} /> */}
-      <AdminHeader  onToggleSidebar={()=>setSidebarOpen(s=>!s)}/>
+      <AdminHeader  onToggleSidebar={()=>setSidebarOpen(!sidebarOpen)}/>
 
       <div className="admin-layout">
         <AdminSidebar collapsed={!sidebarOpen} />
