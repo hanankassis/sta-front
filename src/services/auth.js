@@ -1,14 +1,14 @@
 import { auth } from "./api"
 
 export async function login(credentials) {
-  const data = await auth.loginUser(credentials);
+  const {data} = await auth.loginUser(credentials);
   localStorage.setItem('token' , data.token);
   localStorage.setItem('name' , data.name);
   localStorage.setItem('type' , data.type);
   return data;
 }
 export async function register(info){
-  const data = await auth.registerUser(info);
+  const {data} = await auth.registerUser(info);
   localStorage.setItem('token' , data.token);
   localStorage.setItem('name' , data.name);
   localStorage.setItem('type' , data.type)

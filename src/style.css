@@ -3,13 +3,13 @@
   padding: 0;
 }
 
-.min-vh100{
+.min-vh100 {
   min-height: 100vh;
 }
-.provider-btn:hover{
+.provider-btn:hover {
   background-color: #b2cebe !important;
 }
-.pt-200 { 
+.pt-200 {
   padding-top: 200px;
 }
 .bg-success-dark {
@@ -23,7 +23,7 @@
 }
 .btn-success-light {
   background-color: var(--success-light) !important;
-  color: white   !important;
+  color: white !important;
 }
 .btn-success-light:hover,
 .btn-success-light:disabled {
@@ -38,12 +38,14 @@
   color: white !important;
 }
 .navbar a:hover,
-.navbar button:hover , .dropdown-item:hover {
+.navbar button:hover,
+.dropdown-item:hover {
   color: var(--secondary-light) !important ;
   background-color: transparent !important;
   font-weight: 700;
 }
-.nav-item , .dropdown-item {
+.nav-item,
+.dropdown-item {
   text-align: center !important;
 }
 a,
@@ -53,24 +55,23 @@ a:hover {
 
 /********** header **********/
 header {
-  height: 100vh ;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image:var(--gradient-primary) ;
+  background-image: var(--gradient-primary);
   background-size: cover;
 }
 
 /********** services **********/
 #services {
-  padding: 150px  0 !important;
+  padding: 150px 0 !important;
   height: calc(100vh - 99px);
-  background-image:var(--gradient-secondary) ;
+  background-image: var(--gradient-secondary);
 }
 #services h2 {
   color: var(--secondary-light);
   font-size: 2em;
-
 }
 #services .card {
   padding: 2em;
@@ -78,8 +79,8 @@ header {
   color: var(--success-dark);
 }
 #services .card:hover {
-  background-color: var(--success-light)  !important;
-  color:  white !important;
+  background-color: var(--success-light) !important;
+  color: white !important;
 }
 #services .card:hover h3 {
   color: var(--success-dark-color) !important;
@@ -91,7 +92,7 @@ header {
   color: rgb(104, 103, 103);
   font-size: 1.8em;
 }
-.admin-header {  
+.admin-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,7 +136,7 @@ header {
 }
 
 /* ****** authform*********** */
-.select-multiple{
+.select-multiple {
   color: black !important;
 }
 .auth-form {
@@ -143,15 +144,15 @@ header {
   font-size: 1em;
   min-height: 80vh;
 }
-.auth-form  form{
-  border: solid 1px var(--secondary-light) !important;  
+.auth-form form {
+  border: solid 1px var(--secondary-light) !important;
   position: relative;
   background-color: var(--success-dark);
   z-index: 9999;
 }
-.auth-form label{
+.auth-form label {
   font-size: 1.2em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 /* ****** sidebar*********** */
 .admin-layout {
@@ -165,7 +166,6 @@ header {
   height: 100%;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.02);
   min-height: 92vh;
-
 }
 .admin-sidebar nav ul {
   list-style: none;
@@ -204,13 +204,13 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
-  margin-top: 12px;  
+  margin-top: 12px;
 }
 .admin-card {
   background: #fff;
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);  
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 .admin-card .label {
   font-size: 20px;
@@ -221,7 +221,7 @@ header {
   font-size: 30px;
   font-weight: 700;
 }
-.admin-icon{
+.admin-icon {
   font-size: 3.5em;
 }
 
@@ -280,13 +280,12 @@ header {
   color: #666;
 }
 
-
 /* ************** footer ********** */
 
 .footer {
   line-height: 2;
   background: var(--success-light) !important;
-  padding-top: 50px  !important;
+  padding-top: 50px !important;
   font-size: 1em;
 }
 
@@ -305,7 +304,6 @@ header {
   color: white;
   margin-bottom: 1em;
 }
-
 
 .footer-section p {
   color: rgba(255, 255, 255, 0.8);
@@ -334,7 +332,7 @@ header {
 .footer-bottom {
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
-  }
+}
 
 .social-links {
   display: flex;
@@ -356,4 +354,35 @@ header {
 
 .newsletter img {
   height: 600px;
+}
+
+.spinner-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  left: 0;
+}
+/* Spinner.css */
+.spinner {
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #308552ea ; /* Blue */  
+  border-bottom: 10px solid #308552ea ; /* Blue */  
+  border-radius: 50%;
+  width: 100px; /* Size of the spinner */
+  height: 100px; /* Size of the spinner */
+  animation: spin 1s linear infinite; /* Animation */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
