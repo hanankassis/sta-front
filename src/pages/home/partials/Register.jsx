@@ -134,7 +134,7 @@ const Register = () => {
                 // getOptionLabel={(option) => option.label}
                 // getOptionValue={(option) => option.value}
                 isSearchable
-                placeholder="Search and select country"
+                placeholder="ابحث واختر مدينتك"
               />
             </div>
           </>

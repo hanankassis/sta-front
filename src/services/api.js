@@ -79,7 +79,6 @@ export const categories = {
 
 /*********************** preferences ******************** */
 export const preferences = {
-  // GET /preferences
   list: async () => makeApiRequest('get', '/admin/preferences'),
 
   // GET /preferences/:id

@@ -9,7 +9,7 @@ export default function AdminDashboard() {
 
   return (
     <div style={{minHeight:'100vh',display:'flex',flexDirection:'column'}} dir="rtl">
-      <AdminHeader  onToggleSidebar={()=>setSidebarOpen(!sidebarOpen)}/>
+      <AdminHeader  onToggleSidebar={()=>setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen}/>
 
       <div className="admin-layout">
         <AdminSidebar collapsed={!sidebarOpen} />

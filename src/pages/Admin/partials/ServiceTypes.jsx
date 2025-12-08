@@ -10,27 +10,22 @@ const ServiceTypes = () => {
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState(null)
 
-  // load categories on mount
   useEffect(()=>{
-    let mounted = true
     async function load(){
-      setLoading(true)
+      setLoading(true);
       try{
-        const data = await categories.list()
-        if(mounted){
+        const data = await categories.list();
           // expect data to be an array of categories
           setServiceTypes(Array.isArray(data) ? data : [])
-        }
       }catch(err){
         console.error(err)
         setError(err.message || 'خطأ في تحميل البيانات')
       }finally{
-        setLoading(false)
+        setLoading(false);
       }
     }
-    load()
-    return ()=>{ mounted = false }
-  }, [setServiceTypes])
+    load();
+  }, []);
 
   function handleAddClick(){
     setEditingId(null)

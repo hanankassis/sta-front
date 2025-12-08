@@ -19,7 +19,7 @@ const servicesData = [
 export default function Services() {
   return (
     <div id="services" className="container-fluid">
-      <div className="container">
+      <div className="container ">
         <div className="text-center">
           <h2 className="mb-5">الخدمات الرئيسية </h2>
         </div>
