@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { login as apiLogin } from "../../../services/auth";
+import {auth } from '../../../services/api';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const data = await apiLogin({ email, password });
+      const data = await auth.Login({ email, password });
       if (data.type == "admin") navigate("/admin");
       else if (data.type == "provider") navigate("/provider");
       else navigate("/");

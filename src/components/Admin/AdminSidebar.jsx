@@ -1,14 +1,12 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import './adminSidebar.css'
+import {  NavLink } from "react-router-dom";
 
-const AdminSidebar = ({
-  onSelect = () => {},
-  active = "home",
+const AdminSidebar = ({  
   collapsed = false,
 }) => {
   const items = [
     { key: "home", label: "لوحة القيادة", icon: "🏠" , path:"/admin"},
-    { key: "serviceTypes", label: "تصنيف الخدمات", icon: "🧾" ,  path:"service-types"},
+    { key: "serviceTypes", label: "تصنيف الخدمات", icon: "🧾" ,  path:"categories"},
     { key: "preferences", label: "إدارة التفضيلات", icon: "💜" ,path:"preferences"},
     { key: "providers", label: "إدارة المزودين", icon: "👥" ,path:"providers"},
     { key: "settings", label: " إعدادات المنصة", icon: "⚙️" ,path:"/#"},

@@ -1,0 +1,42 @@
+ .add-new{
+  background-color: var(--success-light-x2);
+ }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: right;
+}
+.table thead th {
+  border-bottom: 1px solid #eee;
+}
+
+.empty-state {
+  padding: 16px;
+  text-align: center;
+  color: #666;
+}
+
+
+.modal-overlay {
+position: fixed;
+top: 0; left: 0; right: 0; bottom: 0;
+background: rgba(0,0,0,0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.modal-box {
+background: white;
+padding: 20px;
+border-radius: 10px;
+width: 400px;
+}
+.file-field input {
+display: block;
+margin-top: 6px;
+}

@@ -1,12 +1,12 @@
 import { useNavigate, Link } from "react-router-dom";
-import { currentUser, logout as apiLogout } from "../../services/auth";
+import {auth } from '../../services/api';
 
 export default function HomeNav() {
   const navigate = useNavigate();
-  const user = currentUser();
+  const user = auth.currentUser();
 
   const handleLogout = () => {
-    apiLogout();
+    auth.logout();
     navigate("/");
   };
 

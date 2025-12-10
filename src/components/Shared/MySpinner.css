@@ -1,0 +1,30 @@
+.spinner-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  left: 0;
+}
+/* Spinner.css */
+.spinner {
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #308552ea ; /* Blue */  
+  border-bottom: 10px solid #308552ea ; /* Blue */  
+  border-radius: 50%;
+  width: 100px; /* Size of the spinner */
+  height: 100px; /* Size of the spinner */
+  animation: spin 1s linear infinite; /* Animation */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

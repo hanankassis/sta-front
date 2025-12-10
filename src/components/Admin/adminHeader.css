@@ -1,0 +1,22 @@
+.title {
+  color: rgb(104, 103, 103);
+  font-size: 1.8em;
+}
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+.admin-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+nav{
+  padding: 5px !important;
+}
+

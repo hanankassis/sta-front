@@ -5,11 +5,11 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/home/Home";
 import Login from "./pages/home/partials/Login";
 import Register from "./pages/home/partials/Register";
-import ServiceTypes from "./pages/Admin/partials/ServiceTypes";
 import AdminHome from "./pages/Admin/partials/Home";
 import Main from "./pages/home/partials/Main";
 import Perefernces from "./pages/Admin/partials/Preferences";
 import Providers from "./pages/Admin/partials/Providers";
+import Categories from "./pages/Admin/partials/categories";
 
 const router = createBrowserRouter([
   {
@@ -39,8 +39,8 @@ const router = createBrowserRouter([
         element: <AdminHome />,
       },
       {
-        path: "service-types",
-        element: <ServiceTypes />,
+        path: "categories",
+        element: <Categories />,
       },
       {
         path: "preferences",

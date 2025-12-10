@@ -1,11 +1,12 @@
-import { logout, currentUser as username } from "../../services/auth";
+import { auth } from "../../services/api";
 import { useNavigate } from 'react-router-dom';
+import './ProviderHeader.css';
 
 const ProviderHeader = () => {  
   const navigator = useNavigate();  
 
   const logoutFn = () => {
-    logout();
+    auth.logout();
     navigator('/');
   }
 
@@ -17,8 +18,10 @@ const ProviderHeader = () => {
       
       <div className="controls">
       
-        <div style={{fontWeight:700}}>{username()}</div>
-        <button className="btn logout" onClick={logoutFn}>تسجيل خروج</button>
+        <div style={{fontWeight:700}}>{auth.currentUser}</div>
+        <button className="btn btn-outline-secondary" onClick={logoutFn}>تسجيل خروج</button>
+        <img src="/logo.png" alt="" width="50"/>
+
       </div>
     </nav>
   )

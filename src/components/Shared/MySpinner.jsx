@@ -1,5 +1,4 @@
-import React from 'react'
-
+import './MySpinner.css'
 export default function MySpinner() {
   return (
     <div className='spinner-wrapper'>

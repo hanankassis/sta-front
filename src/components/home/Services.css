@@ -1,0 +1,22 @@
+#services {
+  padding: 150px 0 !important;
+  height: calc(100vh - 99px);
+  background-image: var(--gradient-secondary);
+}
+#services h2 {
+  color: var(--secondary-light);
+  font-size: 2em;
+}
+#services .card {
+  padding: 2em;
+  transition: 0.5s;
+  color: var(--success-dark);
+}
+#services .card:hover {
+  background-color: var(--success-light) !important;
+  color: white !important;
+}
+#services .card:hover h3 {
+  color: var(--success-dark-color) !important;
+  font-size: 1.2em;
+}

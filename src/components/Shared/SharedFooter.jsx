@@ -1,10 +1,10 @@
 import React from 'react'
-
+import './SharedFooter.css'
 export default function SharedFooter() {
   return (
      <footer id="footer" className="container-fluid text-white-50 footer pt-5">
         <div className="container">
-            <div className="footer-grid">
+            <div className="footer-grid pb-3">
                 <div className="footer-section">
                     <h4>عن المنصة</h4>
                     <p>منصة مساعد سياحي ذكي تتيح لك التعرف على أجمل المعالم السياحية في سوريا </p>
@@ -45,7 +45,7 @@ export default function SharedFooter() {
             </div>
 
             <div className="footer-bottom">
-                <p>  منصة STA - 2025 جميع الحقوق محفوظة  &copy; </p>
+                <p className='my-0 py-4'>  منصة STA - 2025 جميع الحقوق محفوظة  &copy; </p>
             </div>
         </div>
     </footer>

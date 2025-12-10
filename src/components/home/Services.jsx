@@ -1,4 +1,4 @@
-import React from "react";
+import './Services.css';
 
 const servicesData = [
   {
@@ -25,7 +25,7 @@ export default function Services() {
         </div>
         <div className="row g-5 align-items-center text-center">
             {servicesData.map((service, index) => (
-          <div className="col-lg-4">
+          <div key={index} className="col-lg-4">
             <div className="card">
               
               <h3>{service.title} </h3>

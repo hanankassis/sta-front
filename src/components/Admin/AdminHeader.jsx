@@ -1,30 +1,34 @@
-import { logout, currentUser as username } from "../../services/auth";
+import {auth} from '../../services/api'
 import { useNavigate } from 'react-router-dom';
+import './adminHeader.css';
 
 const AdminHeader = ({onToggleSidebar, sidebarOpen}) => {
   const projectName = 'مشروع سياحي ذكي';
   const navigator = useNavigate();  
 
   const logoutFn = () => {
-    logout();
+    auth.logout();
     navigator('/');
   }
 
   return (
     <nav className="admin-header" dir="rtl">      
-      <div className="brand">
+      <div className="brand">        
         <button className="btn btn-success-light" onClick={onToggleSidebar} aria-label="toggle-sidebar" title="إظهار/إخفاء الشريط الجانبي">
         {sidebarOpen?
         (<i className='fa fa-arrow-left'></i>) :
         (<i className='fa fa-arrow-right'></i>)}
         </button>
+        
         <h1 className='title'>{projectName} إدارة</h1>
       </div>
       
       <div className="controls">
       
-        <div style={{fontWeight:700}}>{username()}</div>
-        <button className="btn logout" onClick={logoutFn}>تسجيل خروج</button>
+        <div>{auth.currentUser()}</div>
+        <button className="btn mx-5" onClick={logoutFn}>تسجيل خروج</button>
+        <img src="/logo.png" alt="" width="50"/>
+
       </div>
     </nav>
   )

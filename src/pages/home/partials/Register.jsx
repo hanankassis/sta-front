@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { register as apiRegister } from "../../../services/auth";
+import {auth } from '../../../services/api';
+
 import { countries as apiCountries } from "../../../services/api";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
@@ -47,7 +48,7 @@ const Register = () => {
     formData.country_id = formData.country_id ? formData.country_id.value : null;
     console.log(formData);
     try {
-      const data = await apiRegister(formData);
+      const data = await auth.register(formData);
       if (data.type == "admin") navigate("/admin");
       else if (data.type == "provider") navigate("/provider");
       else navigate("/");

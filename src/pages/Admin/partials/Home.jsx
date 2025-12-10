@@ -13,7 +13,7 @@ const StatCard = ({ label, value, icon , color}) => (
 const Home = ({ serviceCount = 10, tourists = 120, providers = '45' , bookings = 34 }) => {
   return (
     <section>
-      <i class="fa-solid fa-basket-shopping"></i>
+      <i className="fa-solid fa-basket-shopping"></i>
       <div className="admin-cards"> 
         <StatCard label="الخدمات" value={serviceCount} icon="gratipay" color="success"/>
         <StatCard label="السياح" value={tourists} icon="person" color="danger"/>

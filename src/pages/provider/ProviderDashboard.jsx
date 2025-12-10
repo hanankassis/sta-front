@@ -8,7 +8,7 @@ export default function ProviderDashboard() {
     <div>
     <ProviderHeader />
       <div className="provider-layout">
-      <ProviderBsar />
+      <ProviderBar />
 
         <main className="provider-main min-vh100">
           <Outlet/>
