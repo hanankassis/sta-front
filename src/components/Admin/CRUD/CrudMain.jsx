@@ -5,11 +5,10 @@ import CrudTable from "./CrudTable";
 import "./crud.css";
 import MySpinner from "../../Shared/MySpinner";
 
-export default function CrudScreen({ title, api, fields }) {
-  const { items, loading, saving, save, remove } = useCrud(api);
+export default function CrudMain({ api, filter, fields }) {
+  const { items, loading, saving, save, remove , title  } = useCrud(api , filter);
   const [showModal, setShowModal] = useState(false);
   const [activeRow, setActiveRow] = useState({});
-
   function open(row = null) {
     setActiveRow(
       row || fields.reduce((acc, f) => ({ ...acc, [f.name]: "" }), {})
@@ -53,6 +52,7 @@ export default function CrudScreen({ title, api, fields }) {
         fields={fields}
         onSave={setActiveRow}
         onClose={handleClose}
+        saving ={saving}
       />
     </section>
   );

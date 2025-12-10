@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
 import modals from "../services/modals";
 
-export default function useCrud(api) {
+export default function useCrud(api ,filter = null) {
   const [items, setItems] = useState([]);
+  const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
 
   async function load() {
     setLoading(true);
-    const { result, data, text } = await api.list();
-    if (result) setItems(data);
+    console.log(filter)
+    const { result, data, text } = await api.list(filter);
+    if (result) {
+      setItems(data);
+      setTitle(text);
+    }
     else modals.error(text);
     setLoading(false);
   }
@@ -20,7 +25,7 @@ export default function useCrud(api) {
     const apiCall = isEdit ? api.update : api.create;
     const params = isEdit ? [row.id, row] : [row];
 
-    const { result, data, text } = await apiCall(...params);
+    const { result, data, text } = await apiCall(...params , filter);
 
     if (result) {
       modals.success(text);
@@ -47,7 +52,7 @@ export default function useCrud(api) {
   }
   useEffect(() => {
     load();
-  }, []);
+  }, [filter]);
 
-  return { items, loading, saving, load, save, remove };
+  return { items, loading, saving, load, save, remove , title};
 }

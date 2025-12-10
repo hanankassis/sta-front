@@ -20,17 +20,19 @@ api.interceptors.request.use((config) => {
 });
 
 // دالة مساعدة للتعامل مع الاستجابات
-const makeApiRequest = async (
+const makeApiRequest = async ({
   verb,
   url,
   data = null,
-  contentType = "application/json"
+  params = null,
+  contentType = "application/json"}
 ) => {
   try {
     const response = await api({
       method: verb,
       url: url,
       data: data,
+      params:  params ,
       headers: {
         "Content-Type": contentType,
       },

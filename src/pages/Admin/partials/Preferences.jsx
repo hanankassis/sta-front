@@ -1,14 +1,14 @@
-import CrudScreen from '../../../components/Admin/CRUD/CrudMain'
-import {  preferences } from '../../../services/api';
+import { useParams } from "react-router-dom";
+import CrudMain from "../../../components/Admin/CRUD/CrudMain";
+import { preferences } from "../../../services/api";
 
-export default function Categories() {
+export default function Preferences() {
+  const { type } = useParams();
   return (
-    <CrudScreen
-      title="إدارة الخدمات"
+    <CrudMain
       api={preferences}
-      fields={[
-        { name: "name", label: "اسم الميول" },
-      ]}
+      filter={type}
+      fields={[{ name: "name", label: "اسم الميول" }]}
     />
   );
 }

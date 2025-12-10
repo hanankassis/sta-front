@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         element: <Categories />,
       },
       {
-        path: "preferences",
+        path: "preferences/:type",
         element: <Perefernces />,
       },
       {
