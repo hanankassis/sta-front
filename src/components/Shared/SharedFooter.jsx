@@ -3,8 +3,9 @@ import './SharedFooter.css'
 export default function SharedFooter() {
   return (
      <footer id="footer" className="container-fluid text-white-50 footer pt-5">
+        <hr />
         <div className="container">
-            <div className="footer-grid pb-3">
+            <div className="footer-grid py-3">
                 <div className="footer-section">
                     <h4>عن المنصة</h4>
                     <p>منصة مساعد سياحي ذكي تتيح لك التعرف على أجمل المعالم السياحية في سوريا </p>

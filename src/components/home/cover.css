@@ -1,0 +1,36 @@
+header {
+  height: 100vh;
+  
+  background-image: var(--gradient-primary);
+  background-size: cover;
+}
+
+.start.btn {
+  bottom: 20px;
+  background-color: rgba(244, 245, 217, 0.849);
+  left:50% ;
+  height: 3em;
+  width: 10em;
+  color: var(--success-light);
+  font-size: 1.3em;
+
+}
+
+.pulse-btn {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1) translateX(-50%);
+  }
+  50% {
+    transform: scale(1.08) translateX(-50%);
+  }
+  100% {
+    transform: scale(1) translateX(-50%);
+  }
+}
+ hr {
+  color: white;
+ }

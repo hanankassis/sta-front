@@ -1,10 +1,11 @@
-import React from 'react'
+import Cover from '../../../components/home/Cover';
 import Services from '../../../components/home/Services';
-import HomeHeader from '../../../components/home/HomeHeader';
+import Offers from '../../../components/home/Offers';
 export default function Main() {
   return (
     <>
-    <HomeHeader />
+    <Cover/>
+    <Offers/>
     <Services />
     </>
   )

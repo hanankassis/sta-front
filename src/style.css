@@ -13,6 +13,22 @@
 .pt-200 {
   padding-top: 200px;
 }
+.mt-200 {
+  margin-top: 200px;
+}
+.mt-6 {
+  margin-top: 2em;
+}
+.mt-7 {
+  margin-top: 3em;
+}
+.pt-7 {
+  padding-top: 3em ;
+}
+.ms-7 {
+  margin-left: 100px;
+}
+
 .bg-success-dark {
   background-color: var(--success-dark);
 }
@@ -31,8 +47,9 @@
   background-color: var(--success-light-x2) !important;
   color: black !important;
 }
-
-
+.navbar-brand {
+  left: 20px;
+}
 .navbar a,
 .navbar button {
   color: white !important;
@@ -52,17 +69,13 @@ a,
 a:hover {
   text-decoration: none;
 }
-
-/********** header **********/
-header {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: var(--gradient-primary);
-  background-size: cover;
+.main-title{
+  text-shadow: 1px 2px 10px rgb(2, 54, 2) ;
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1em ;
 }
-
 /* ****** authform*********** */
 .select-multiple {
   color: black !important;
@@ -76,14 +89,14 @@ header {
   border: solid 1px var(--secondary-light) !important;
   position: relative;
   background-color: var(--success-dark);
-  z-index: 9999;
+  z-index: 1;
 }
 .auth-form label {
   font-size: 1.2em;
   margin-bottom: 0.5em;
 }
 /* ****** admin main*********** */
- .admin-main {
+.admin-main {
   flex: 1;
   padding: 20px;
   background: #fafafa;

@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 const ProviderBar = () => {
   const items = [
     {  label: "الصفحة الرئيسية", icon: "🏠" , path:"/provider"},
-    {  label: "إدارة الخدمات", icon: "🍀" ,  path:"service-types"},
+    {  label: "إدارة الخدمات", icon: "🍀" ,  path:"services"},
     {  label: "إدارة الروابط", icon: "🏹" ,  path:"apis"},
     {  label: "إدارة الإشعارات", icon: "🔔" ,  path:"notification"},
     {  label: "استعراض التعليقات", icon: "📝" ,  path:"comments"},

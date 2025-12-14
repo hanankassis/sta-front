@@ -16,7 +16,9 @@
   --success-light-x2: rgb(187, 224, 187);
   --success-light-x3: rgb(217, 240, 217);
 
-  --secondary-light : rgb(234, 241, 133);
+  --secondary : rgb(254, 255, 239);
+  --secondary-1 : rgb(238, 241, 59);
+  --secondary-2 : rgb(234, 241, 133);
 
   
   /* ألوان الخلفيات */
@@ -39,7 +41,6 @@
   --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
   
   /* التدرجات */
-  --gradient-primary: linear-gradient(var(--success-dark)  , var(--secondary-light) 45% 55%, var(--success-light) );
-  --gradient-secondary: linear-gradient(  var(--success-light) 20% , var(--secondary-light) 100%);
-  --gradient-light: linear-gradient(rgba(0, 0, 0, 0)  , var(--secondary-light) );
+  --gradient-primary: linear-gradient(var(--success-dark)  , var(--secondary) , var(--success-light) );
+  --gradient-secondary: linear-gradient(  var(--success-light) 10% , var(--secondary) , var(--success-light));
   }

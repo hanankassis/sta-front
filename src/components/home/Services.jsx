@@ -21,11 +21,11 @@ export default function Services() {
     <div id="services" className="container-fluid">
       <div className="container ">
         <div className="text-center">
-          <h2 className="mb-5">الخدمات الرئيسية </h2>
+          <h1 className="main-title">الخدمات الرئيسية </h1>
         </div>
         <div className="row g-5 align-items-center text-center">
             {servicesData.map((service, index) => (
-          <div key={index} className="col-lg-4">
+          <div key={index} className="col-lg-4 ">
             <div className="card">
               
               <h3>{service.title} </h3>

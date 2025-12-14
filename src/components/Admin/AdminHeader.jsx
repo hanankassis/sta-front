@@ -8,6 +8,9 @@ const AdminHeader = ({onToggleSidebar, sidebarOpen}) => {
 
   const logoutFn = () => {
     auth.logout();
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("type");
     navigator('/');
   }
 
@@ -25,7 +28,7 @@ const AdminHeader = ({onToggleSidebar, sidebarOpen}) => {
       
       <div className="controls">
       
-        <div>{auth.currentUser()}</div>
+        <div>{auth.currentUser()}</div>        
         <button className="btn mx-5" onClick={logoutFn}>تسجيل خروج</button>
         <img src="/logo.png" alt="" width="50"/>
 

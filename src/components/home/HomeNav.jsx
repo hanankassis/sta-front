@@ -7,11 +7,14 @@ export default function HomeNav() {
 
   const handleLogout = () => {
     auth.logout();
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("type");
     navigate("/");
   };
 
   return (
-    <nav className="navbar navbar-expand-lg  fixed-top  fs-5">
+    <nav className="navbar navbar-expand-lg  fixed-top  fs-6 pt-3">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -48,15 +51,9 @@ export default function HomeNav() {
             </li>
           </ul>
         </div>
-        <ul className="navbar-nav align-items-center  ">
-          <li className="nav-item">
-            <input
-              className="form-control form-control ms-5"
-              placeholder="بحث عن خدمة"
-            />
-          </li>
+        <ul className="navbar-nav align-items-center">          
           {user ? (
-            <li className="nav-item dropdown me-5">
+            <li className="nav-item dropdown ms-7">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"  
@@ -89,24 +86,24 @@ export default function HomeNav() {
               </ul>
             </li>
           ) : (
-            <li className="nav-item d-flex">
+            <li className="nav-item d-flex ms-7">
               <>
-                <Link to="/login" className="nav-link">
+                <Link to="/login" className="nav-link ">
                   تسجيل دخول
                 </Link>
                 <Link to="/register" className="nav-link">
-                  إتشاء حساب
+                  إنشاء حساب
                 </Link>
               </>
             </li>
           )}
-          <li>
-            <Link className="navbar-brand" to="/">
-              <img src="/logo.png" alt="sta-logo" width="80" />
-            </Link>
-          </li>
+         
         </ul>
+
       </div>
+        <Link className="navbar-brand position-fixed top-0" to="/" >
+              <img  src="/logo.png" alt="sta-logo" width="80" />
+            </Link>
     </nav>
   );
 }

@@ -1,0 +1,13 @@
+#offers{  
+  background-image: var(--gradient-secondary) ;
+  padding: 10em 10%;  
+}
+
+.offer{
+  border: solid 20px rgba(53, 105, 53, 0.671);
+}
+
+#offers .card {
+  background-color: transparent;
+
+}

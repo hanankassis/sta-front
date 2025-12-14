@@ -13,12 +13,12 @@ const ProviderHeader = () => {
   return (
     <nav className="admin-header" dir="rtl">      
       <div className="brand">
-        <h1 className='title me-4'>اهلا بك {username}</h1>
+        <h1 className='title me-4'>اهلا بك {auth.currentUser()}</h1>
       </div>
       
       <div className="controls">
       
-        <div style={{fontWeight:700}}>{auth.currentUser}</div>
+        <div style={{fontWeight:700}}>{auth.currentUser()}</div>
         <button className="btn btn-outline-secondary" onClick={logoutFn}>تسجيل خروج</button>
         <img src="/logo.png" alt="" width="50"/>
 
