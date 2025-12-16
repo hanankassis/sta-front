@@ -15,6 +15,7 @@
   --success-light-x1: rgb(88, 134, 88);
   --success-light-x2: rgb(187, 224, 187);
   --success-light-x3: rgb(217, 240, 217);
+  --success-light-opacity:rgba(78, 133, 78, 0.74);
 
   --secondary : rgb(254, 255, 239);
   --secondary-1 : rgb(238, 241, 59);

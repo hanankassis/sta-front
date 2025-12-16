@@ -26,7 +26,7 @@ export default function Cover() {
   return (
     <header>
       <div className="container-fluid pt-5">
-        <h1 className="main-title mt-6 mb-5">
+        <h1 className="main-title mt-6 mb-5" data-aos="fade-up">
           مرحباً بك في منصة مساعد سياحي ذكي
         </h1>
         <div className="d-flex justify-content-center align-items-center position-relative overflow-hidden">
@@ -39,12 +39,16 @@ export default function Cover() {
               objectFit: "cover",
               opacity: 0.6,
             }}
+            data-aos="flip-right"
+            data-aos-delay="500"
           />
 
           {/* الصورة الكبيرة مع تداخل */}
           <div
             className="position-relative"
             style={{ width: "60%", height: "360px" }}
+            data-aos="zoom-out"
+            data-aos-delay="200"
           >            
             <button className="start  pulse-btn btn  mt-2 position-absolute z-3">
               ابدأ رحلتك السياحية
@@ -72,6 +76,8 @@ export default function Cover() {
               objectFit: "cover",
               opacity: 0.6,
             }}
+            data-aos="flip-left"
+            data-aos-delay="500"
           />
         </div>
       </div>

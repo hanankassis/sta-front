@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom"; // استخدام react-router-dom لـ createBrowserRouter و RouterProvider
 import "bootstrap/dist/css/bootstrap.min.css"; // استيراد Bootstrap CSS
@@ -9,8 +9,7 @@ import './style.css';
 import './design-system.css';
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    {/* {<h1>Hello</h1>} */}
+  <StrictMode>    
     <RouterProvider router={router} />
   </StrictMode>
 );

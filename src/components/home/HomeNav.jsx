@@ -1,5 +1,6 @@
 import { useNavigate, Link } from "react-router-dom";
 import {auth } from '../../services/api';
+import { useEffect } from "react";
 
 export default function HomeNav() {
   const navigate = useNavigate();
@@ -13,8 +14,27 @@ export default function HomeNav() {
     navigate("/");
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        // إزاحة الأزرار للأعلى عند التمرير
+        document.getElementById("MainNavBar").style.backgroundColor =
+          "var(--success-light-opacity)";
+      } else {
+        document.getElementById("MainNavBar").style.backgroundColor = "transparent";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // تنظيف الحدث عند تفكيك المكون
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar navbar-expand-lg  fixed-top  fs-6 pt-3">
+    <nav id="MainNavBar" className="navbar navbar-expand-lg  fixed-top  fs-6 pt-3">
       <div className="container-fluid">
         <button
           className="navbar-toggler"

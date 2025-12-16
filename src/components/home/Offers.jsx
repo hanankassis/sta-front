@@ -35,13 +35,14 @@ export default function Slider() {
 
   return (
     <div id="offers" className="container-fluid pb-5">
-      <h1 className="main-title ">آخر العروض</h1>
+      <h1 className="main-title" data-aos="flip-up">آخر العروض</h1>
       <div className=" position-relative   overflow-hidden">
         <div className="offer row g-0 align-items-center">
           {/* الصورة مع تداخل (Crossfade) */}
           <div
             className="col-md-6 position-relative order-md-2"
             style={{ minHeight: "300px" }}
+            data-aos="flip-left"
           >
             <AnimatePresence mode="sync">
               <motion.img
@@ -52,7 +53,7 @@ export default function Slider() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1.8, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               />
             </AnimatePresence>
 
@@ -69,7 +70,8 @@ export default function Slider() {
           </div>
 
           {/* النص */}
-          <div className="col-md-6 p-4 position-relative order-md-1 text-end">
+          <div className="col-md-6 p-4 position-relative order-md-1 text-end"
+          data-aos="flip-right">
             <h3 className="mb-3 text-success">{title}</h3>
             <p className="text-muted">{description}</p>
 
