@@ -17,8 +17,8 @@ const ProviderBar = () => {
           {items.map((i,index) => (
             <li key={index} className="card p-1 text-center">             
               <NavLink to={i.path} className="btn bg-success-subtle provider-btn" end >
-                <span style={{ marginLeft: 8 }}>{i.icon}</span>
-                <span>{i.label}</span>
+                <div style={{ marginLeft: 8 }}>{i.icon}</div>
+                <div>{i.label}</div>
               </NavLink>
             </li>
           ))}

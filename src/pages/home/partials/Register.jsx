@@ -13,7 +13,7 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [countryOptions, setCountryOptions] = useState([]);
   const navigate = useNavigate();
-  const [validationErrors, setvalidationErrors] = useState([]);
+  const [validationErrors, setValidationErrors] = useState([]);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -24,6 +24,7 @@ const Register = () => {
     gender: "M",
     country_id: null, // For react-select, it's an object
     description: "", // For provider
+    image_id: null, // For provider
   });
 
   const userTypes = [
@@ -39,16 +40,27 @@ const Register = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.files[0] || null });
+  };
+  
   const handleSelectChange = (selectedOption, { name }) => {
     setFormData({ ...formData, [name]: selectedOption });
   };
 
+  /********* Submit ***********/
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    formData.country_id = formData.country_id
-      ? formData.country_id.value
-      : null;
+    setValidationErrors({});
+
+    const fd = new FormData();
+    fd.append("country_id", formData.country_id?.value ?? null);
+    for (const key in formData) {
+      if (key !== "country_id") {
+        fd.append(key, formData[key]);
+      }
+    }
 
     const { status, result, data, text } = await auth.register(formData);
     if (result) {
@@ -60,7 +72,7 @@ const Register = () => {
       else navigate("/");
     } else if (status == 422) {
       modals.error("البيانات غير صحيحة");
-      setvalidationErrors(data);
+      setValidationErrors(data);
     } else modals.error(text);
 
     setLoading(false);
@@ -84,7 +96,7 @@ const Register = () => {
 
   return (
     <div className="auth-form d-flex justify-content-center align-items-center  ">
-      <form onSubmit={handleSubmit} className="w-50 p-4 mb-5 mt-100 text-white mt-7">
+      <form onSubmit={handleSubmit} className="w-50 p-4 mb-5 text-white mt-7">
         <h3 className="text-secondary text-center">إنشاء حساب</h3>
 
         <MyInput
@@ -136,16 +148,22 @@ const Register = () => {
               formDataValue={formData.gender}
               onChange={handleChange}
             />
-
-            <div className="mb-3 text-bg-dark select-multiple">
-              <Select
-                name="country_id"
-                value={formData.country_id}
-                options={countryOptions}
-                onChange={handleSelectChange}
-                isSearchable
-                placeholder="ابحث واختر مدينتك"
-              />
+            <div className="mb-3">
+              <div className="text-bg-dark select-multiple">
+                <Select
+                  name="country_id"
+                  value={formData.country_id}
+                  options={countryOptions}
+                  onChange={handleSelectChange}
+                  isSearchable
+                  placeholder="ابحث واختر مدينتك"
+                />
+              </div>
+              {validationErrors.country_id && (
+                <small className="text-warning">
+                  {validationErrors.country_id}
+                </small>
+              )}
             </div>
           </>
         ) : (
@@ -157,6 +175,13 @@ const Register = () => {
               onChange={handleChange}
               placeholder="اشرح عن خداماتك..."
               style={{ width: "100%", padding: "8px", minHeight: "80px" }}
+            />
+            <MyInput
+              placeholder="حمل الصورة الأساسية"
+              type="file"
+              name="image_id"
+              onChange={handleFileChange}
+              error={validationErrors.image_id}
             />
             {validationErrors.description && (
               <small className="text-warning">

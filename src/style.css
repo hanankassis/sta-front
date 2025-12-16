@@ -20,7 +20,7 @@
   margin-top: 2em;
 }
 .mt-7 {
-  margin-top: 3em;
+  margin-top: 4.5em;
 }
 .pt-7 {
   padding-top: 3em ;
@@ -57,7 +57,8 @@
 .navbar a:hover,
 .navbar button:hover,
 .dropdown-item:hover {
-  color: var(--secondary-light) !important ;
+  color: var(--success-light-x3) !important ;
+  text-shadow: 1px 1px 2px black;
   background-color: transparent !important;
   font-weight: 700;
 }
@@ -90,6 +91,7 @@ a:hover {
   position: relative;
   background-color: var(--success-dark);
   z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 .auth-form label {
   font-size: 1.2em;

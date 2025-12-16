@@ -5,21 +5,26 @@ header {
   background-size: cover;
 }
 
-.start.btn {
-  bottom: 20px;
-  background-color: rgba(244, 245, 217, 0.849);
-  left:50% ;
-  height: 3em;
-  width: 10em;
-  color: var(--success-light);
-  font-size: 1.3em;
-
-}
-
 .pulse-btn {
+  bottom: 40px;
+  background-color: var(--success-light-x3);
+  left:50% ;
+  border: solid .1px var(--success-dark) !important;
+  box-shadow: 5px 5px 60px rgb(227, 241, 228),
+    -5px -5px 60px rgb(187, 224, 187);
+  width: 10em;
+  color: var(--success-dark);
+  font-weight: 500;
+  font-size: 1.3em;
   animation: pulse 3s ease-in-out infinite;
+  border-radius: 50px !important;
 }
-
+.pulse-btn:hover {
+  background-color: var(--success-light-x2-opacity);
+  color: var(--success-dark-x2);
+  box-shadow: 5px 5px 80px rgb(217, 240, 217),
+    -5px -5px 80px rgb(181, 250, 181);
+}
 @keyframes pulse {
   0% {
     transform: scale(1) translateX(-50%);

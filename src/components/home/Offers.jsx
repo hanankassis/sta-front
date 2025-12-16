@@ -35,7 +35,7 @@ export default function Slider() {
 
   return (
     <div id="offers" className="container-fluid pb-5">
-      <h1 className="main-title" data-aos="flip-up">آخر العروض</h1>
+      <h1 className="main-title" data-aos="fade-up">آخر العروض</h1>
       <div className=" position-relative   overflow-hidden">
         <div className="offer row g-0 align-items-center">
           {/* الصورة مع تداخل (Crossfade) */}

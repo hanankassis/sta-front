@@ -50,7 +50,7 @@ export default function Cover() {
             data-aos="zoom-out"
             data-aos-delay="200"
           >            
-            <button className="start  pulse-btn btn  mt-2 position-absolute z-3">
+            <button className="pulse-btn btn  mt-2 position-absolute z-3">
               ابدأ رحلتك السياحية
             </button>
             <AnimatePresence mode="sync">

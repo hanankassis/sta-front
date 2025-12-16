@@ -14,6 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setValidationErrors({});
     const { status, result, data, text } = await auth.login({
       email,
       password,
