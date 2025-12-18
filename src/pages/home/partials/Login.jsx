@@ -8,7 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [validationErrors, setvalidationErrors] = useState([]);
+  const [validationErrors, setValidationErrors] = useState([]);
   
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
