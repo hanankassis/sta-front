@@ -15,8 +15,10 @@
     "bootstrap": "^5.3.8",
     "font-awesome": "^4.7.0",
     "framer-motion": "^12.23.26",
+    "leaflet": "^1.9.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.9.6",
     "react-select": "^5.10.2",
     "sweetalert2": "^11.26.4"

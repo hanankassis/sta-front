@@ -108,7 +108,7 @@ export default function HomeNav() {
           ) : (
             <li className="nav-item d-flex ms-7">
               <>
-                <Link to="/login" className="nav-link ">
+                <Link to="/login" className="nav-link ms-3 ">
                   تسجيل دخول
                 </Link>
                 <Link to="/register" className="nav-link">
