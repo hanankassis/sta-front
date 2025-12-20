@@ -9,7 +9,7 @@ const AdminSidebar = ({
     {  label: "تصنيف الخدمات", icon: "🧾" ,  path:"categories"},
     { label: "إدارة التفضيلات", icon: "💜" , path:"preferences/favor"},
     { label: "إدارة الحالات الصحية", icon: "👩‍⚕️" ,path:"preferences/medical"},
-    // { label: "إدارة المزودين", icon: "👥" ,path:"providers"},
+    { label: "إدارة المزودين", icon: "👥" ,path:"providers"},
     // { label: " إعدادات المنصة", icon: "⚙️" ,path:"/#"},
   ];
 

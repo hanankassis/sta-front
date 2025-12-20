@@ -9,7 +9,7 @@ import Register from "./pages/home/partials/Register";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import AdminHome from "./pages/Admin/partials/Home";
 import Perefernces from "./pages/Admin/partials/Preferences";
-import Categories from "./pages/Admin/partials/categories";
+import Categories from "./pages/Admin/partials/Categories";
 import Providers from "./pages/Admin/partials/Providers";
 
 import ProviderDashboard from "./pages/provider/ProviderDashboard";
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: <Perefernces />,
       },
       {
-        path: "providers-control",
+        path: "providers",
         element: <Providers />,
       },
     ],

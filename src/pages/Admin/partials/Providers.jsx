@@ -1,44 +1,44 @@
-import { useState, useEffect } from "react";
-import { providers as apiProviders } from "../../../services/api";
 
-const Providers = () => {
+import { useEffect, useState } from "react";
+import MySpinner from "../../../components/Shared/MySpinner";
+import { admin as apiAdmin } from "../../../services/api";
+import modals from '../../../services/modals';
+import MapComponent from "../../../components/Shared/MapComponent";
+
+export default function Providers() {
+  const [loading, setLoading] = useState(false); 
+  const [saving, setSaving] = useState(false);
   const [Providers, setProviders] = useState([]);
-  const [loading, setLoading] = useState(false);    const [saving, setSaving] = useState(false);
-  
-  // load Providers on mount
-  useEffect(() => {
-    async function load() {
+
+  useEffect( () => {
+     async function loadProvider() {
       setLoading(true);
-      try {
-        const data = await apiProviders.list();
+      const {  result, data, text } = await apiAdmin.list();
+      if (result)        
           setProviders(Array.isArray(data) ? data : []);
-      } catch (err) {
-        console.error(err);
-        setError(err.message || "خطأ في تحميل البيانات");
-      } finally {
+        else 
+          modals.error(text);        
         setLoading(false);
-      }
-    }
-    load();
+      }    
+
+    loadProvider();
   }, []);
 
   
 
   async function handleToggle( providerId) {
     setSaving(true);
-    try {
-      apiProviders.toggleState(providerId);
+     const {result,  text} = await apiProviders.toggleState(providerId);     
+     if(result)
       setProviders((prev) =>
           prev.map((s) => (s.id === providerId ? { ...s, accepted: !s.accepted } : s))
-      );
+      )
+      else  
+        modals.error (text);
 
-    } catch (err) {
-      console.error(err);
-      alert(err.message || "خطأ أثناء التعديل");
-    } finally {
-      setSaving(false);
-    }
+    setSaving(false);
   }
+
 
   return (
     <section>
@@ -63,25 +63,14 @@ const Providers = () => {
             position: "relative",
           }}
         >
-          {loading && (
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "rgba(255,255,255,0.6)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              جارٍ التحميل...
-            </div>
-          )}
+          {(loading || saving) &&  <MySpinner/>}
           <table className="table">
             <thead>
               <tr>
                 <th>الاسم</th>
                 <th>الوصف</th>
+                <th>الصورة</th>
+                <th>الموقع</th>
                 <th>الحالة</th>
                 <th style={{ width: 180 }}>إجراءات</th>
               </tr>
@@ -91,13 +80,15 @@ const Providers = () => {
                 <tr key={s.id}>
                   <td>{s.name}</td>
                   <td>{s.description}</td>
+                  <td><img src={s.image} alt="" width="200" height="150"/></td>
+                  <td> <MapComponent lat={s.lat} lng={s.lng} /></td>
                   <td>{s.accepted ? 'مشترك' : 'قيد الانتظار' }</td>
                   <td>
                     <button
                       onClick={() => handleToggle(s.id)}
                       className= {`btn ${s.accepted?'btn-danger':'btn-success-light '}  ms-2`}
                     >
-                     {saving? 'جاري الحفظ' : s.accepted?'منع':'قبول'} 
+                     { s.accepted?'منع':'قبول'} 
                     </button>                    
                   </td>
                 </tr>
@@ -116,5 +107,3 @@ const Providers = () => {
     </section>
   );
 };
-
-export default Providers;

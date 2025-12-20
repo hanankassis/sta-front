@@ -106,7 +106,7 @@ const Register = () => {
 
   useEffect(() => {
     async function loadCountries() {
-      const { status, result, data, text } = await apiCountries();
+      const {  result, data, text } = await apiCountries();
       if (result) setCountryOptions(data);
       else modals.error(text);
       setLoading(false);
