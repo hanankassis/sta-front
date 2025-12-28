@@ -4,16 +4,34 @@ import MySpinner from "../../../components/Shared/MySpinner";
 import { admin as apiAdmin } from "../../../services/api";
 import modals from '../../../services/modals';
 import MapComponent from "../../../components/Shared/MapComponent";
+import { useParams } from "react-router-dom";
 
 export default function Providers() {
+  // const accepted = useParams("accepted");
+  const {accepted} = useParams();
+  // console.log(accepted , "component")
   const [loading, setLoading] = useState(false); 
   const [saving, setSaving] = useState(false);
   const [Providers, setProviders] = useState([]);
+  
 
-  useEffect( () => {
-     async function loadProvider() {
+  async function handleToggle( providerId) {
+    setSaving(true);
+     const {result,  text} = await apiAdmin.acceptProvider(providerId);  
+     if(result){
+      setProviders((prev) =>
+          prev.filter(s => (s.id !== providerId) )
+      );
+    } else  
+        modals.error (text);
+
+    setSaving(false);
+  }
+
+    useEffect( () => {
+     async function loadProvider(accepted) {
       setLoading(true);
-      const {  result, data, text } = await apiAdmin.list();
+      const  {  result, data, text }  = await apiAdmin.list(accepted);      
       if (result)        
           setProviders(Array.isArray(data) ? data : []);
         else 
@@ -21,24 +39,8 @@ export default function Providers() {
         setLoading(false);
       }    
 
-    loadProvider();
+    loadProvider(accepted);
   }, []);
-
-  
-
-  async function handleToggle( providerId) {
-    setSaving(true);
-     const {result,  text} = await apiProviders.toggleState(providerId);     
-     if(result)
-      setProviders((prev) =>
-          prev.map((s) => (s.id === providerId ? { ...s, accepted: !s.accepted } : s))
-      )
-      else  
-        modals.error (text);
-
-    setSaving(false);
-  }
-
 
   return (
     <section>
@@ -82,13 +84,13 @@ export default function Providers() {
                   <td>{s.description}</td>
                   <td><img src={s.image} alt="" width="200" height="150"/></td>
                   <td> <MapComponent lat={s.lat} lng={s.lng} /></td>
-                  <td>{s.accepted ? 'مشترك' : 'قيد الانتظار' }</td>
+                  <td>{s.accepted ? 'مشترك' : 'قيد الانتظار' } {s.accepted}</td>
                   <td>
                     <button
                       onClick={() => handleToggle(s.id)}
                       className= {`btn ${s.accepted?'btn-danger':'btn-success-light '}  ms-2`}
                     >
-                     { s.accepted?'منع':'قبول'} 
+                     { saving?  'جاري القبول':'قبول'} 
                     </button>                    
                   </td>
                 </tr>

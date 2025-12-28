@@ -1,12 +1,12 @@
 import SharedFooter from '../../components/Shared/SharedFooter';
 import { Outlet } from 'react-router-dom';
-import ProviderBar from '../../components/provider/ProviderBar';
-import ProviderHeader from '../../components/provider/ProviderHeader';
+import ProviderBar from '../../components/Provider/ProviderBar';
+import ProviderNav from '../../components/Provider/ProviderNav';
 
 export default function ProviderDashboard() {
   return (
     <div>
-    <ProviderHeader />
+    <ProviderNav />
       <div className="provider-layout">
       <ProviderBar />
 

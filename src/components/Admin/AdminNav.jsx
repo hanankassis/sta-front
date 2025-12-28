@@ -1,8 +1,9 @@
 import {auth} from '../../services/api'
 import { useNavigate } from 'react-router-dom';
-import './adminHeader.css';
+import './adminNav.css';
 
-const AdminHeader = ({onToggleSidebar, sidebarOpen}) => {
+
+const AdminNav = ({onToggleSidebar, sidebarOpen}) => {
   const projectName = 'مشروع سياحي ذكي';
   const navigator = useNavigate();  
 
@@ -37,4 +38,4 @@ const AdminHeader = ({onToggleSidebar, sidebarOpen}) => {
   )
 }
 
-export default AdminHeader
+export default AdminNav

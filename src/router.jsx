@@ -1,20 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 
-import Home from "./pages/home/Home";
-import Main from "./pages/home/partials/Main";
-import Login from "./pages/home/partials/Login";
-import Register from "./pages/home/partials/Register";
+import Home from "./pages/Home/Home";
+import Main from "./pages/Home/Partials/Main";
+import Login from "./pages/Home/Partials/Login";
+import Register from "./pages/Home/Partials/Register";
 
 import AdminDashboard from "./pages/Admin/AdminDashboard";
-import AdminHome from "./pages/Admin/partials/Home";
-import Perefernces from "./pages/Admin/partials/Preferences";
-import Categories from "./pages/Admin/partials/Categories";
-import Providers from "./pages/Admin/partials/Providers";
+import AdminHome from "./pages/Admin/Partials/Home";
+import Perefernces from "./pages/Admin/Partials/Preferences";
+import Categories from "./pages/Admin/Partials/Categories";
+import Providers from "./pages/Admin/Partials/Providers";
 
-import ProviderDashboard from "./pages/provider/ProviderDashboard";
-import ProviderHome from "./pages/Provider/partials/Home";
-import ProviderServices from './pages/provider/partials/Services'
+import ProviderDashboard from "./pages/Provider/ProviderDashboard";
+import ProviderHome from "./pages/Provider/Partials/Home";
+import ProviderServices from './pages/Provider/Partials/Services'
 
 const router = createBrowserRouter([
   {
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: <Perefernces />,
       },
       {
-        path: "providers",
+        path: "providers/:accepted",
         element: <Providers />,
       },
     ],

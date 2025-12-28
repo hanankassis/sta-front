@@ -30,11 +30,11 @@ const Register = () => {
     password_confirmation: "",
     name: "",
     type: "tourist", // Default to tourist
-    
+
     DOB: "",
     gender: "M",
     country_id: null, // For react-select, it's an object
-    
+
     description: "", // For provider
     image_id: null, // For provider
   });
@@ -74,7 +74,7 @@ const Register = () => {
     fd.append("type", formData.type);
     if (formData.type === "provider") {
       fd.append("description", formData.description);
-        fd.append("image_id", formData.image_id);
+      fd.append("image_id", formData.image_id);
       fd.append("latitude", position.latlng.lat);
       fd.append("longitude", position.latlng.lng);
     } else if (formData.type === "tourist") {
@@ -83,17 +83,16 @@ const Register = () => {
       fd.append("country_id", formData.country_id?.value ?? null);
     }
 
-    fd.forEach((value, key) => {
-      console.log(key, value);
-    });
+    // fd.forEach((value, key) => {
+    //   console.log(key, value);
+    // });
 
     const { status, result, data, text } = await auth.register(fd);
     if (result) {
       localStorage.setItem("token", data.token);
       localStorage.setItem("name", data.name);
       localStorage.setItem("type", data.type);
-      if (data.type == "admin") navigate("/admin");
-      else if (data.type == "provider") navigate("/provider");
+      if (data.type == "provider") navigate("/provider");
       else navigate("/");
     } else if (status == 422) {
       modals.error("البيانات غير صحيحة");
@@ -106,7 +105,7 @@ const Register = () => {
 
   useEffect(() => {
     async function loadCountries() {
-      const {  result, data, text } = await apiCountries();
+      const { result, data, text } = await apiCountries();
       if (result) setCountryOptions(data);
       else modals.error(text);
       setLoading(false);

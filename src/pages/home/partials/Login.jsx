@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import modals from "../../../services/modals";
 import MyInput from "../../../components/form/MyInput";
-import  auth  from "../../../services/api/auth";
+import auth from "../../../services/api/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [validationErrors, setValidationErrors] = useState([]);
-  
+
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,16 +19,18 @@ const Login = () => {
       email,
       password,
     });
-    if (result ) {
+    if (result) {
       localStorage.setItem("token", data.token);
       localStorage.setItem("name", data.name);
       localStorage.setItem("type", data.type);
       if (data.type == "admin") navigate("/admin");
       else if (data.type == "provider") navigate("/provider");
       else navigate("/");
+    } else if (status === 400) {
+      modals.error("بيانات الدخول غير صحيحة. يرجى المحاولة مرة أخرى.");
     } else if (status === 422) {
       modals.error(text);
-      setvalidationErrors(data);
+      setValidationErrors(data);
     } else modals.error(text);
 
     setLoading(false);
