@@ -16,8 +16,8 @@ header {
   color: var(--success-dark);
   font-weight: 500;
   font-size: 1.3em;
-  animation: pulse 3s ease-in-out infinite;
   border-radius: 50px !important;
+  animation: pulse 3s ease-in-out infinite;
 }
 .pulse-btn:hover {
   background-color: var(--success-light-x2-opacity);

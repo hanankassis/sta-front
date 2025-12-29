@@ -6,10 +6,7 @@ const auth = {
   register: (data) =>  makeApiRequest({verb:"post", url: "/register", data , contentType:"multipart/form-data"}),      
   logout: () =>  makeApiRequest({verb:"post", url:"/logout"}),
   currentUser: () =>  localStorage.getItem("name"),
-  currentUserType: () => {
-    const raw = localStorage.getItem("type");
-    return raw ? JSON.parse(raw) : null;
-  },
+  currentUserType: () => localStorage.getItem("type"),
 };
 
 export default auth;
