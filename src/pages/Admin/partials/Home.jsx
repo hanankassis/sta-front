@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { admin, categories } from "../../../services/api";
+import { admin } from "../../../services/api";
 import MySpinner from "../../../components/Shared/MySpinner";
+import modals from "../../../services/modals";
 
 const StatCard = ({ label, value, icon, color }) => (
   <div className={`admin-card text-${color} `}>
@@ -24,7 +25,7 @@ const StatCard = ({ label, value, icon, color }) => (
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
-  const [totals, settotals] = useState({
+  const [totals, setTotals] = useState({
     categories: 0,
     tourists: 0,
     providers: 0,
@@ -33,49 +34,50 @@ const Home = () => {
   useEffect(() => {
     async function getTotals() {
       setLoading(true);
-      const { data } = await admin.totals();
-      console.log(data);
-      settotals(data);
+      const { result, data, text } = await admin.totals();
+      if (result) setTotals(data);
+      else modals.error(text);
       setLoading(false);
     }
     getTotals();
   }, []);
-  return(
-  <>
-    {loading ? (
-      <MySpinner />
-    ) : (
-      <section>
-        <i className="fa-solid fa-basket-shopping"></i>
-        <div className="admin-cards">
-          <StatCard
-            label="الخدمات"
-            value={totals.categories}
-            icon="gratipay"
-            color="success"
-          />
-          <StatCard
-            label="السياح"
-            value={totals.tourists}
-            icon="person"
-            color="danger"
-          />
-          <StatCard
-            label="مقدمو الخدمة"
-            value={totals.providers}
-            icon="users"
-            color="warning"
-          />
-          <StatCard
-            label="الحجوزات"
-            value={totals.bookings}
-            icon="gg"
-            color="primary"
-          />
-        </div>
-      </section>
-    )}
-  </>)
+  return (
+    <>
+      {loading ? (
+        <MySpinner />
+      ) : (
+        <section>
+          <i className="fa-solid fa-basket-shopping"></i>
+          <div className="admin-cards">
+            <StatCard
+              label="الخدمات"
+              value={totals.categories}
+              icon="gratipay"
+              color="success"
+            />
+            <StatCard
+              label="السياح"
+              value={totals.tourists}
+              icon="person"
+              color="danger"
+            />
+            <StatCard
+              label="مقدمو الخدمة"
+              value={totals.providers}
+              icon="users"
+              color="warning"
+            />
+            <StatCard
+              label="الحجوزات"
+              value={totals.bookings}
+              icon="gg"
+              color="primary"
+            />
+          </div>
+        </section>
+      )}
+    </>
+  );
 };
 
 export default Home;

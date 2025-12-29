@@ -4,17 +4,17 @@ import './offer.css'
 
 const slides = [
   {
-    image: "https://picsum.photos/id/1015/600/400",
+    image: "/images/offer1.jpg",
     title: "العنوان الأول",
     description: "هذا شرح بسيط للصورة الأولى يمكن تغييره حسب الحاجة.",
   },
   {
-    image: "https://picsum.photos/id/1016/600/400",
+    image: "/images/offer2.jpg",
     title: "العنوان الثاني",
     description: "هذا شرح بسيط للصورة الثانية مع محتوى توضيحي.",
   },
   {
-    image: "https://picsum.photos/id/1018/600/400",
+    image: "/images/offer3.jpg",
     title: "العنوان الثالث",
     description: "وصف مختصر للصورة الثالثة داخل السلايدر.",
   },

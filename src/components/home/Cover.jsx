@@ -3,10 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./cover.css";
 
 const images = [
-  "https://picsum.photos/id/1015/900/500",
-  "https://picsum.photos/id/1016/900/500",
-  "https://picsum.photos/id/1018/900/500",
-  "https://picsum.photos/id/1020/900/500",
+  '/images/cover1.jpg',
+  '/images/cover2.jpg',
+  '/images/cover3.jpg',
+  '/images/cover4.jpg',
 ];
 
 export default function Cover() {
@@ -15,7 +15,7 @@ export default function Cover() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 5000); // انتقال بطيء
+    }, 2000); // انتقال بطيء
 
     return () => clearInterval(timer);
   }, []);

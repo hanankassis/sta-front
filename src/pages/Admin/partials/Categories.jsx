@@ -1,4 +1,4 @@
-import CrudScreen from '../../../components/Admin/CRUD'
+import CrudScreen from '../../../components/Admin/CRUD/CrudMain'
 import { categories } from '../../../services/api/';
 
 export default function Categories() {

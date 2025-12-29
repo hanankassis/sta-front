@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useCrud from "../../../hooks/useCrud";
-import CrudModal from "./CrudModal";
-import CrudTable from "./CrudTable";
+import CrudModal from "./../../Shared/CRUD/CrudModal";
+import CrudTable from "./../../Shared/CRUD/CrudTable";
 import "./crud.css";
 import MySpinner from "../../Shared/MySpinner";
 

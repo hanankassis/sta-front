@@ -14,7 +14,9 @@ import Providers from "./pages/Admin/Partials/Providers";
 
 import ProviderDashboard from "./pages/Provider/ProviderDashboard";
 import ProviderHome from "./pages/Provider/Partials/Home";
-import ProviderServices from './pages/Provider/Partials/Services'
+import ProviderServices from "./pages/Provider/Partials/Services";
+import ProtectComponent from "./components/Security/ProtectComponent";
+import Forbidden from "./components/Security/Forbidden403";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +39,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <AdminDashboard />,
+    element: (
+      <ProtectComponent userType="admin">
+        <AdminDashboard />
+      </ProtectComponent>
+    ),
     children: [
       {
         index: true,
@@ -59,7 +65,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/provider",
-    element: <ProviderDashboard />,
+    element: (
+      <ProtectComponent userType="provider">
+        <ProviderDashboard />
+      </ProtectComponent>
+    ),
     children: [
       {
         index: true,
