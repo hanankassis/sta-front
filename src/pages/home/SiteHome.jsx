@@ -6,7 +6,7 @@ import Aos from "aos";
 import 'aos/dist/aos.css';
 
 
-export default function Home() {
+export default function SiteHome() {
   useEffect(() => {
     Aos.init({
       duration: 1000, // Duration of animations (in milliseconds)

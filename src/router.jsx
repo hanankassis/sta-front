@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 
-import Home from "./pages/Home/Home";
-import Main from "./pages/Home/Partials/Main";
+import Home from "./pages/Home/SiteHome";
+import HomeMain from './pages/Home/Partials/Home'
 import Login from "./pages/Home/Partials/Login";
 import Register from "./pages/Home/Partials/Register";
 
@@ -16,7 +16,6 @@ import ProviderDashboard from "./pages/Provider/ProviderDashboard";
 import ProviderHome from "./pages/Provider/Partials/Home";
 import ProviderServices from "./pages/Provider/Partials/Services";
 import ProtectComponent from "./components/Security/ProtectComponent";
-import Forbidden from "./components/Security/Forbidden403";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +24,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Main />,
+        element: <HomeMain />,
       },
       {
         path: "login",
