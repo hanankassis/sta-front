@@ -5,6 +5,8 @@ const categories = {
   get:    (id) => makeApiRequest({verb: "get", url: `/admin/categories/${id}`}),
   create:  (data) =>  makeApiRequest({verb:"post", url: "/admin/categories", data}),
   update:  (id, data) =>  makeApiRequest({verb:"put", url: `/admin/categories/${id}`, data}),
-  remove:  (id) =>  makeApiRequest({verb:"delete", url:  `/admin/categories/${id}`})
+  remove:  (id) =>  makeApiRequest({verb:"delete", url:  `/admin/categories/${id}`}),
+
+  tree:  () =>  makeApiRequest({verb:"get", url:  `/categories/tree`}),
 }
 export default categories;

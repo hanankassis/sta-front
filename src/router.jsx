@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import NotFound from "./pages/NotFound";
 
 import Home from "./pages/Home/SiteHome";
 import HomeMain from './pages/Home/Partials/Home'
@@ -16,6 +15,8 @@ import ProviderDashboard from "./pages/Provider/ProviderDashboard";
 import ProviderHome from "./pages/Provider/Partials/Home";
 import ProviderServices from "./pages/Provider/Partials/Services";
 import ProtectComponent from "./components/Security/ProtectComponent";
+import NotFound404 from "./pages/NotFound404";
+import CategoryTreePage from "./pages/Home/Partials/CategoriesTree";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "start-tour",
+        element: <CategoryTreePage />,
       },
     ],
   },
@@ -90,7 +95,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <NotFound />,
+    element: <NotFound404 />,
   },
 ]);
 

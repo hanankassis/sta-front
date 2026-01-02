@@ -37,7 +37,7 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-form d-flex justify-content-center align-items-center ">
+    <div className="main-container d-flex justify-content-center align-items-center ">
       <form onSubmit={handleSubmit} className="w-50 p-5 mb-5 mt-200 text-white">
         <h3 className="mb-3 text-secondary text-center">تسجيل دخول</h3>
         <MyInput

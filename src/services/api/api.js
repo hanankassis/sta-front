@@ -26,7 +26,7 @@ const makeApiRequest = async ({
   data = null,
   params = null,
   contentType = "application/json"}) => {
-    console.log("verb" , verb );
+    // console.log("verb" , verb );
   try {
     const response = await api({
       method: verb,

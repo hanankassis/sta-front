@@ -115,7 +115,7 @@ const Register = () => {
 
   return (
     <div className="container-fluid">
-      <div className="auth-form row justify-content-center align-items-center  ">
+      <div className="main-container row justify-content-center align-items-center  ">
         <form
           onSubmit={handleSubmit}
           className="col-md-6 p-4 mb-5 text-white mt-7"

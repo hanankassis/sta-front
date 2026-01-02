@@ -1,13 +1,14 @@
-export default function Forbidden403() {
+
+export default function NotFound404() {
   return (
     <div className="d-flex align-items-center justify-content-center min-vh-100 forbidden-bg">
       <div className="text-center px-3">
-        <p className="welcome-text mb-4"> 403</p>
+        <p className="welcome-text mb-4"> 404</p>
 
-        <h1 className="forbidden-title mb-4">FORBIDDEN RESOURCE</h1>
+        <h1 className="forbidden-title mb-4">NOT FOUND RESOURCE</h1>
 
         <p className="description-text mx-auto">
-         المخدم رفض طلبك لعدم وجود صلاحيات كافية
+         الصفحة غير موجودة 😑
         </p>
       </div>
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./cover.css";
+import { Link } from "react-router-dom";
 
 const images = [
   '/images/cover1.jpg',
@@ -50,9 +51,9 @@ export default function Cover() {
             data-aos="zoom-out"
             data-aos-delay="200"
           >            
-            <button className="pulse-btn btn  mt-2 position-absolute z-3">
+            <Link className="pulse-btn btn  mt-2 position-absolute z-3" to="/start-tour">
               ابدأ رحلتك السياحية
-            </button>
+            </Link>
             <AnimatePresence mode="sync">
               <motion.img
                 key={images[index]}

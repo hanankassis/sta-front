@@ -10,8 +10,8 @@
 .provider-btn:hover {
   background-color: #b2cebe !important;
 }
-.pt-200 {
-  padding-top: 200px;
+.pt-100 {
+  padding-top: 50px;
 }
 .mt-200 {
   margin-top: 200px;
@@ -77,23 +77,26 @@ a:hover {
   font-weight: 400;
   margin-bottom: 1em ;
 }
+.bg-nav{
+  height: 70px;
+}
 /* ****** authform*********** */
 .select-multiple {
   color: black !important;
 }
-.auth-form {
+.main-container {
   background-color: var(--success-light);
   font-size: 1em;
   min-height: 80vh;
 }
-.auth-form form {
+.main-container form {
   border: solid 1px var(--secondary-light) !important;
   position: relative;
   background-color: var(--success-dark);
   z-index: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
-.auth-form label {
+.main-container label {
   font-size: 1.2em;
   margin-bottom: 0.5em;
 }
