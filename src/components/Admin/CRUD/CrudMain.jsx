@@ -16,6 +16,15 @@ export default function CrudMain({ api, filter, fields }) {
     setShowModal(true);
   }
 
+  function openChildModal(parentId) {
+    const newRow = fields.reduce((acc, f) => {
+      if (f.name === "category_id") return { ...acc, [f.name]: parentId };
+      return { ...acc, [f.name]: "" };
+    }, {});
+    setActiveRow(newRow);
+    setShowModal(true);
+  }
+
   async function handleClose(submit) {
     if (submit) {
       const ok = await save(activeRow);
@@ -44,6 +53,7 @@ export default function CrudMain({ api, filter, fields }) {
         fields={fields}
         onEdit={(row) => open(row)}
         onDelete={remove}
+        onAddChild={openChildModal}
       />
 
       <CrudModal

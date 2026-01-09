@@ -44,3 +44,59 @@ margin-top: 6px;
 .provider-crud th{
   color: var(--success-light)
 }
+
+/* Hierarchy visual styles */
+.hierarchy-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+.hierarchy-icon {
+  font-size: 0.5rem;
+  opacity: 0.9;
+}
+.hierarchy-name[data-depth="0"] {
+  opacity: 1;
+  color: #2c3e50;
+}
+.hierarchy-name[data-depth="0"] .hierarchy-icon {
+  color: #27ae60;
+}
+.hierarchy-name[data-depth="1"] {
+  opacity: 0.90;
+  color: #34495e;
+}
+.hierarchy-name[data-depth="1"] .hierarchy-icon {
+  color: #229954;
+}
+.hierarchy-name[data-depth="2"] {
+  opacity: 0.78;
+  color: #566573;
+}
+.hierarchy-name[data-depth="2"] .hierarchy-icon {
+  color: #16a085;
+}
+.hierarchy-name[data-depth="3"] {
+  opacity: 0.66;
+  color: #6c7a7d;
+}
+.hierarchy-name[data-depth="3"] .hierarchy-icon {
+  color: #1abc9c;
+}
+.hierarchy-name[data-depth="4"] {
+  opacity: 0.55;
+  color: #85929e;
+}
+.hierarchy-name[data-depth="4"] .hierarchy-icon {
+  color: #52be80;
+}
+.hierarchy-name[data-depth="5"] {
+  opacity: 0.44;
+  color: #95a5a6;
+}
+.hierarchy-name[data-depth="5"] .hierarchy-icon {
+  color: #a3e4d7;
+}

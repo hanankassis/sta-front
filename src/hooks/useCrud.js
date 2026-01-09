@@ -29,10 +29,8 @@ export default function useCrud(api ,filter = null) {
 
     if (result) {
       modals.success(text);
-      setItems((prev) => {
-        if (isEdit) return prev.map((x) => (x.id === data.id ? data : x));
-        return [data, ...prev];
-      });
+      // Reload list to ensure hierarchy/tree structure is properly updated
+      await load();
     } else modals.error(text);
     setSaving(false);
     return result;
@@ -45,7 +43,8 @@ export default function useCrud(api ,filter = null) {
     const { result, text } = await api.remove(id);
     if (result) {
       modals.success(text);
-      setItems((prev) => prev.filter((x) => x.id !== id));
+      // Reload list to update hierarchy/tree structure
+      await load();
     } else modals.error(text);
 
     return result;
