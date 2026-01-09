@@ -7,16 +7,25 @@
   color: var(--secondary-light);
   font-size: 2em;
 }
+#services h3 {
+  font-size: 1.5em;
+}
 #services .card {
   padding: 2em;
-  transition: 0.5s;
+  transition: 1s;
   color: var(--success-dark);
 }
 #services .card:hover {
   background-color: var(--success-light) !important;
   color: white !important;
+  transform: scaleX(1.1);
+  box-shadow: 5px 5px 10px black;
+  font-weight: 100;
+}
+#services .card:hover .count {
+  transition: 0.3s;
+  font-weight: 900;
 }
 #services .card:hover h3 {
-  color: var(--success-dark-color) !important;
-  font-size: 1.2em;
+  color: var(--success-dark-color) !important;  
 }

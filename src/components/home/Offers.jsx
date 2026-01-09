@@ -5,18 +5,18 @@ import './offer.css'
 const slides = [
   {
     image: "/images/offer1.jpg",
-    title: "العنوان الأول",
-    description: "هذا شرح بسيط للصورة الأولى يمكن تغييره حسب الحاجة.",
+    title: "الجامع الأموي",
+    description: "الجامع الأموي في دمشق يُعتبر رمزًا للعمارة الإسلامية، يجمع بين الأصالة والجمال، ويعكس تاريخًا عريقًا وثقافة غنية..",
   },
   {
     image: "/images/offer2.jpg",
-    title: "العنوان الثاني",
-    description: "هذا شرح بسيط للصورة الثانية مع محتوى توضيحي.",
+    title: "مقام صلاح الدين الأيوبي",
+    description: "مقام صلاح الدين الأيوبي في دمشق يُعتبر رمزًا للتاريخ العربي، حيث يخلد ذكرى القائد العظيم الذي وحد الأمة في مواجهة التحديات..",
   },
   {
     image: "/images/offer3.jpg",
-    title: "العنوان الثالث",
-    description: "وصف مختصر للصورة الثالثة داخل السلايدر.",
+    title: "قصر العظم",
+    description: "قصر العظم في دمشق هو معلم تاريخي رائع، يعكس العمارة الإسلامية القديمة ويحتوي على متحف يبرز التراث الثقافي السوري..",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function Slider() {
 
   return (
     <div id="offers" className="container-fluid pb-5">
-      <h1 className="main-title" data-aos="fade-up">آخر العروض</h1>
+      <h1 className="main-title" data-aos="fade-up">أجمل المناطق </h1>
       <div className=" position-relative   overflow-hidden">
         <div className="offer row g-0 align-items-center">
           {/* الصورة مع تداخل (Crossfade) */}

@@ -31,11 +31,7 @@
   --bg-lighter: #f0f2f5;
   --bg-gray: #ecf0f1;
 
-  /* ألوان النصوص */
-  --text-dark: #203145; /* نص أساسي */
-  --text-muted: #7f8c8d; /* نص فاتح */
-  --text-light: #8aaaca; /* نص خفيف جداً */
-
+  
   /* الحدود والظلال */
   --border-color: #ddd;
   --border-light: #e8e8e8;

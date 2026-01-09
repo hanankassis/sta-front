@@ -1,22 +1,20 @@
+import { useEffect, useState } from 'react';
 import './Services.css';
+import { categories as apiCategories } from '../../services/api';
+import modals from '../../services/modals';
 
-const servicesData = [
-  {
-    icon: "fa-building",
-    title: "سياحة ترفيهية",
-    description: "اشتكشف معنا أجمل أماكن الطبيعة الخلابة"
-  },
-  {
-    icon: "fa-compass",
-    title: "سياحة علاجية ",
-    description: "أسعار منافسة وأطباؤء بارعون",
-  },{
-    icon: "fa-list",
-    title: "سياحة ترفيهية وعلاحية",
-    description: "ننسق لك برنامجاً  يساعدك في التعافي",
-  }
-];
 export default function Services() {
+  const [servicesData, setServicesData] = useState([])
+  useEffect(()=>{
+    async function  loadDervicesData(){
+      const {result , text , data} = await apiCategories.topLevel();
+      if (result)
+          setServicesData( data);
+        else
+          modals.error(text);
+    }
+    loadDervicesData();
+  });
   return (
     <div id="services" className="container-fluid">
       <div className="container ">
@@ -26,18 +24,12 @@ export default function Services() {
         <div className="row g-5 align-items-center text-center">
             {servicesData.map((service, index) => (
           <div key={index} className="col-lg-4" data-aos="zoom-in-left" data-aos-delay={index * 200}>
-            <div className="card">
-              
-              <h3>{service.title} </h3>
-              <p className="mb-5">
-                {service.description}
-              </p>
-              <span className="icon">
-                <i className={`fa ${service.icon} fa-5x mb-4`}></i>
-              </span>
+            <div className="card">              
+              <h3>{service.name} </h3> 
+              <div className="fs-2 count" data-aos="zoom-in-up" data-aos-delay={index * 200}>{service.children_recursive_count}</div>             
             </div>
           </div>       
-            ))}            
+          ))}            
         </div>
       </div>
     </div>

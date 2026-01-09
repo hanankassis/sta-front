@@ -1,6 +1,7 @@
 import makeApiRequest from "./api";
 
 const categories = {
+  topLevel:  () => makeApiRequest({verb: "get", url: "/categories/top-level"}),
   all:  () => makeApiRequest({verb: "get", url: "/categories"}),
   list:  () => makeApiRequest({verb: "get", url: "/admin/categories"}),
   get:    (id) => makeApiRequest({verb: "get", url: `/admin/categories/${id}`}),

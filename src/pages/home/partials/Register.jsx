@@ -19,7 +19,8 @@ const Register = () => {
   const [validationErrors, setValidationErrors] = useState([]);
   const [position, setPosition] = useState(
     {
-      latlng: { lat: 33.526752, lng: 36.296909 },
+      // latlng: { lat: 33.526752, lng: 36.296909 },
+      latlng: { lat: 33.506074423204986, lng: 36.28632701534472 },
       accuracy: 50,
     }
     // null
