@@ -5,6 +5,7 @@ import { useEffect } from "react";
 export default function HomeNav() {
   const navigate = useNavigate();
   const user = auth.currentUser();
+  const type = auth.currentUserType();
 
   const handleLogout = () => {
     auth.logout();
@@ -85,15 +86,25 @@ export default function HomeNav() {
               </a>
               <ul className="dropdown-menu  bg-success-dark">
                 <li>
-                  <Link className="dropdown-item" to="#">
-                    الملف الشخصي
-                  </Link>
+                  
                 </li>                
+                  {type=='admin' ? (
                 <li>
                   <Link className="dropdown-item " to="/admin">
                     إدارة الموقع
                   </Link>
-                </li>                
+                </li>   
+                  ): type=='provider' ? (
+                <li>
+                  <Link className="dropdown-item " to="/provider">
+                    إدارة خدماتك
+                  </Link>
+                </li>   
+                  ):(
+                    <Link className="dropdown-item " to="/preferences">
+                    إدارة ملفك الشخصي
+                  </Link>
+                  )}             
                 
                 <li>
                   <hr className="dropdown-divider" />

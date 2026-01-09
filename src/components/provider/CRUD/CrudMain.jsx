@@ -30,7 +30,7 @@ export default function CrudMain({ api, filter, fields }) {
       <div className="d-flex justify-content-between align-items-center ">
         <h3 className="text-success my-0">{title}</h3>
           <button
-            className="btn btn-outline-success add-new "
+            className="btn btn-success"
             onClick={() => open()}
           >
             إضافة جديد

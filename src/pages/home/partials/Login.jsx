@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import modals from "../../../services/modals";
 import MyInput from "../../../components/form/MyInput";
-import auth from "../../../services/api/auth";
+import {auth} from "../../../services/api";
 
 const Login = () => {
   const [email, setEmail] = useState("");

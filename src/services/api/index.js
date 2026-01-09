@@ -5,3 +5,5 @@ export { default as preferences} from './preferences';
 export { default as admin} from './admin';
 export { default as services} from './services';
 export {default as notifications} from './notifications';
+export {default as provider} from './providers';
+ 

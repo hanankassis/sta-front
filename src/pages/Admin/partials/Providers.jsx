@@ -73,7 +73,7 @@ export default function Providers() {
                 <th>الوصف</th>
                 <th>الصورة</th>
                 <th>الموقع</th>
-                <th>الحالة</th>
+                {/* <th>الحالة</th> */}
                 <th style={{ width: 180 }}>إجراءات</th>
               </tr>
             </thead>
@@ -83,8 +83,9 @@ export default function Providers() {
                   <td>{s.name}</td>
                   <td>{s.description}</td>
                   <td><img src={s.image} alt="" width="200" height="150"/></td>
+                  {/* <td>{console.log(s.lat)}</td> */}
                   <td> <MapComponent lat={s.lat} lng={s.lng} /></td>
-                  <td>{s.accepted ? 'مشترك' : 'قيد الانتظار' } {s.accepted}</td>
+                  {/* <td>{s.accepted ? 'مشترك' : 'قيد الانتظار' } {s.accepted}</td> */}
                   <td>
                     <button
                       onClick={() => handleToggle(s.id)}

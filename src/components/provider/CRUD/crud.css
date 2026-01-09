@@ -40,3 +40,7 @@ width: 400px;
 display: block;
 margin-top: 6px;
 }
+
+.provider-crud th{
+  color: var(--success-light)
+}

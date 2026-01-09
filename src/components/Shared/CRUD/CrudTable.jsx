@@ -1,6 +1,6 @@
 export default function CrudTable({ items, fields, onEdit, onDelete }) {
   return (
-    <table className="table mt-3">
+    <table className="table mt-3 provider-crud">
       <thead>
         <tr>
           {fields.map((f) => (
@@ -11,7 +11,7 @@ export default function CrudTable({ items, fields, onEdit, onDelete }) {
       </thead>
       <tbody>
         {items.map((row) => (
-          <tr key={row.id}>
+          <tr key={row.id} >
             {fields.map((f) => (
               <td key={f.name}>{row[f.name]}</td>
             ))}

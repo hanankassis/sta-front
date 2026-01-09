@@ -1,6 +1,5 @@
 import makeApiRequest from "./api";
-const providers = {
-  // list: async (data) => makeApiRequest({verb: "get", url: "/admin/providers",  data}),
-  // toggleState: async (id) => makeApiRequest({verb: "patch", url: `/admin/providers/${id}`}),
+const provider = {
+  getInfo: () => makeApiRequest({verb: "get", url: "/provider/getInfo"}),
 };
-export default providers;
+export default provider;

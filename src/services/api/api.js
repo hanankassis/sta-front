@@ -51,14 +51,14 @@ const makeApiRequest = async ({
         result: false,
         data: error.response.data.errors,
         text: "بعض الحقول غير صحيحة",
-      };
+      };      
     // the server responded with othor
     else if (error.response)
       return {
         status: error.status,
         result: false,
         data: error.response.data,
-        text: "حدث خطأ يرجى المحاولة لاحقاً.",
+        text: error.response.data.message??  "حدث خطأ يرجى المحاولة لاحقاً.",
       };
     // no response
     else

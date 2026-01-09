@@ -4,6 +4,7 @@ import Home from "./pages/Home/SiteHome";
 import HomeMain from './pages/Home/Partials/Home'
 import Login from "./pages/Home/Partials/Login";
 import Register from "./pages/Home/Partials/Register";
+import Preferences from "./pages/Home/Partials/Preferences";
 
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import AdminHome from "./pages/Admin/Partials/Home";
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "start-tour",
         element: <CategoryTreePage />,
+      },
+      {
+        path: "preferences",
+        element: <Preferences />,
       },
     ],
   },
