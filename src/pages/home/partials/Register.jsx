@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../../../services/api";
 
 import { countries as apiCountries } from "../../../services/api";
+import { provinces as apiProvinces } from "../../../services/api";
 import { categories as apiCategories } from "../../../services/api";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
@@ -14,12 +15,13 @@ import ImageUploader from "../../../components/Form/ImageUploader";
 const Register = () => {
   const [loading, setLoading] = useState(false);
   const [countryOptions, setCountryOptions] = useState([]);
+  const [provinceOptions, setProvinceOptions] = useState([]);
   const [categoryOptions, setCategoryOptions] = useState([]);
   const navigate = useNavigate();
   const [validationErrors, setValidationErrors] = useState([]);
   const [position, setPosition] = useState(
     {
-      // latlng: { lat: 33.526752, lng: 36.296909 },
+      /**  موقع جامعة الشام */
       latlng: { lat: 33.506074423204986, lng: 36.28632701534472 },
       accuracy: 50,
     }
@@ -38,6 +40,8 @@ const Register = () => {
     gender: "M", // for tourist
     country_id: null, // For tourist (react-select, it's an object)
 
+    province_id: null, // For tourist (react-select, it's an object)
+    title: "", // For provider
     description: "", // For provider
     image_id: null, // For provider
     categories: [], // For provider(react-select multi)
@@ -60,16 +64,16 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.files[0] || null });
   };
 
-  const handleSelectCountry = (selectedOption, { name }) => {
+  const handleSelect = (selectedOption, { name }) => {
     setFormData({ ...formData, [name]: selectedOption });
   };
+
   const handleSelectCategories = (selectedOptions, { name }) => {
     // selectedOptions is an array when `isMulti` is true
     setFormData({ ...formData, [name]: selectedOptions || [] });
-    console.log(selectedOptions);
-    console.log(name);
-    console.log("f" ,formData[name]);
-
+    // console.log(selectedOptions);
+    // console.log(name);
+    // console.log("f" ,formData[name]);
   };
 
   /********* Submit ***********/
@@ -85,12 +89,17 @@ const Register = () => {
     fd.append("name", formData.name);
     fd.append("type", formData.type);
     if (formData.type === "provider") {
+      fd.append("title", formData.description);
       fd.append("description", formData.description);
       fd.append("image_id", formData.image_id);
       fd.append("latitude", position.latlng.lat);
       fd.append("longitude", position.latlng.lng);
+      fd.append("province_id", formData.province_id?.value ?? null);
+
       if (formData.categories && formData.categories.length) {
-        const categoryIds = formData.categories.map((c) => c.id ?? c.value ?? c);
+        const categoryIds = formData.categories.map(
+          (c) => c.id ?? c.value ?? c
+        );
         categoryIds.forEach((id) => fd.append("categories[]", id));
       }
     } else if (formData.type === "tourist") {
@@ -120,20 +129,16 @@ const Register = () => {
   };
 
   useEffect(() => {
-    async function loadCountries() {
-      const { result, data, text } = await apiCountries();
-      if (result) setCountryOptions(data);
+    async function loadSettings(api, setFunc) {
+      const { result, data, text } = await api();
+      if (result) setFunc(data);
       else modals.error(text);
-      setLoading(false);
     }
-    async function loadCategories() {
-      const { result, data, text } = await apiCategories.all();
-      if (result) setCategoryOptions(data);
-      else modals.error(text);
-      setLoading(false);
-    }
-    loadCountries();
-    loadCategories();
+    setLoading(true);
+    loadSettings(apiCountries, setCountryOptions);
+    loadSettings(apiProvinces, setProvinceOptions);
+    loadSettings(apiCategories.all, setCategoryOptions);
+    setLoading(false);
   }, []);
 
   return (
@@ -209,7 +214,7 @@ const Register = () => {
                     name="country_id"
                     value={formData.country_id}
                     options={countryOptions}
-                    onChange={handleSelectCountry}
+                    onChange={handleSelect}
                     isSearchable
                     placeholder="ابحث واختر مدينتك"
                   />
@@ -223,7 +228,30 @@ const Register = () => {
             </>
           ) : (
             <>
-            
+              <MyInput
+                placeholder="الوصف"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                error={validationErrors.title}
+              />
+              <div className="mb-3">
+                <div className="text-bg-dark select-multiple">
+                  <Select
+                    name="province_id"
+                    value={formData.province_id}
+                    options={provinceOptions}
+                    onChange={handleSelect}
+                    isSearchable
+                    placeholder="ابحث واختر المحافظة"
+                  />
+                </div>
+                {validationErrors.country_id && (
+                  <small className="text-warning">
+                    {validationErrors.country_id}
+                  </small>
+                )}
+              </div>
               <div style={{ marginBottom: "10px" }}>
                 <label>التفاصيل:</label>
                 <textarea

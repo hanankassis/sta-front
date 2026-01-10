@@ -1,6 +1,6 @@
 .footer {
   line-height: 2;
-    background-color: var(--success-light) !important;
+    background-color: var(--success-dark) !important;
   padding-top: 50px !important;
   font-size: 1em;
 }
@@ -38,11 +38,14 @@
 .footer-section a {
   color: rgba(255, 255, 255, 0.8);
   transition: color var(--transition-base);
+  text-align: right ;
+  margin-left: 10px;
 }
 
 .footer-section a:hover {
   color: white;
   transform: scale(1.2);
+  transform-origin: right;
 }
 
 .footer-bottom {

@@ -4,6 +4,67 @@
   margin: 0;
 }
 
+/* الألوان الأساسية */
+:root {
+  --success-dark-x2: rgb(45, 73, 45);
+  --success-dark: rgb(72, 126, 72);
+  --success-light: rgb(102, 158, 102);
+  --success-light-x2: rgb(181, 250, 181);
+  --success-light-x2-opacity: rgba(187, 224, 187, 0.842);
+  --success-light-x3: rgb(235, 252, 235);
+  --success-light-opacity: rgba(78, 133, 78, 0.74);
+
+  --secondary: rgb(254, 255, 239);
+  --secondary-light: rgb(251, 252, 238);
+
+  
+  /* الحدود والظلال */
+  --border-color: #ddd;
+  --border-light: #e8e8e8;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
+
+  /* التدرجات */
+  --gradient-primary: linear-gradient(
+    var(--success-dark),
+    var(--secondary),
+    var(--success-light)
+  );
+  --gradient-secondary: linear-gradient(
+    var(--success-light) 10%,
+    var(--secondary),
+    var(--success-light)
+  );
+  --radial: radial-gradient(
+    var(--secondary-light) ,
+    var(--success-light-x2) ,
+    var(--success-dark)  70%
+  );
+}
+
+.table-success-light > td{
+background-color: var(--success-light-x3) !important;
+} 
+.table-warning-light >td{
+background-color: var(--secondary-light) !important;
+
+}
+
+.bg-success,
+.table-success {
+  background: var(--success-light) !important;
+}
+.table-concise th {
+  padding: 0.1em !important;
+  text-align: center;
+}
+.table-concise td {
+  padding: 0.3em 0.5em !important;
+  font-size: .9em;  
+}
+
 .min-vh100 {
   min-height: 100vh;
 }
@@ -53,6 +114,8 @@
 .navbar a,
 .navbar button {
   color: white !important;
+  font-weight: 600;
+  font-size: 1.2em;
 }
 .navbar a:hover,
 .navbar button:hover,
@@ -85,9 +148,10 @@ a:hover {
   color: black !important;
 }
 .main-container {
-  background-color: var(--success-light);
+  background-image: var(--radial);   
   font-size: 1em;
-  min-height: 80vh;
+  min-height: 100vh;
+  color: var(--success-dark);
 }
 .main-container form {
   border: solid 1px var(--secondary-light) !important;
@@ -146,4 +210,23 @@ a:hover {
   padding: 1em;
   width: 600px;
   max-width: 100%;
+}
+
+.type-none{
+  list-style: none;
+}
+.contact-us h3{
+  color: var(--success-dark);
+
+}
+
+.navbar-nav {
+  text-shadow: 1px 2px 5px grey ;  
+}
+
+.contact-us, .about  {
+  text-shadow: 1px 2px 5px white ;  
+}
+.contact-us h4 , .contact-us a{
+  color: var(--success-dark);
 }

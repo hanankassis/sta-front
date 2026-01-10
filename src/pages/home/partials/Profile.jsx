@@ -55,11 +55,11 @@ export default function CategoryTreePage() {
     <div className="bg-success bg-nav">
 
     </div>
-    <div className="container-fluid p-5 main-container bg-white ">
-      <div className="row">
+    <div className="container-fluid p-5  bg-white ">
+      <div className="row"> 
         {/* القائمة الجانبية */}
         <div className="col-3 border-end">
-          <h5>الاختيارات</h5>
+          <h5 className="text-success">الاختيارات</h5>
           {selectedPaths.length ? (
             <SidebarTree paths={selectedPaths} onRemove={handleRemove} />
           ) : (
@@ -68,8 +68,7 @@ export default function CategoryTreePage() {
         </div>
 
         {/* الشجرة الرئيسية */}
-        <div className="col-9">
-          <h4 className="mb-3">شجرة الأصناف</h4>
+        <div className="col-9">          
           <ul className="list-group">
             {tree.map(cat => (
               <CategoryNode

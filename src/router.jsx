@@ -4,7 +4,8 @@ import Home from "./pages/Home/SiteHome";
 import HomeMain from './pages/Home/Partials/Home'
 import Login from "./pages/Home/Partials/Login";
 import Register from "./pages/Home/Partials/Register";
-import Preferences from "./pages/Home/Partials/Preferences";
+import ContactUs from "./pages/Home/Partials/Contactus";
+import Profile from "./pages/Home/Partials/Profile";
 
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import AdminHome from "./pages/Admin/Partials/Home";
@@ -17,7 +18,8 @@ import ProviderHome from "./pages/Provider/Partials/Home";
 import ProviderServices from "./pages/Provider/Partials/Services";
 import ProtectComponent from "./components/Security/ProtectComponent";
 import NotFound404 from "./pages/NotFound404";
-import CategoryTreePage from "./pages/Home/Partials/CategoriesTree";
+import About from "./pages/Home/Partials/About";
+
 
 const router = createBrowserRouter([
   {
@@ -38,11 +40,19 @@ const router = createBrowserRouter([
       },
       {
         path: "start-tour",
-        element: <CategoryTreePage />,
+        element: <Profile />,
       },
       {
-        path: "preferences",
-        element: <Preferences />,
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contact-us",
+        element: <ContactUs />,
       },
     ],
   },

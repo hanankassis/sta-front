@@ -51,24 +51,24 @@ export default function HomeNav() {
         <div className="collapse navbar-collapse text-end" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/">                
+                الرئيسية
+              </Link>
+            </li>           
+            <li className="nav-item">
+              <Link className="nav-link" to="profile">                
                 الخدمات
-              </a>
+              </Link>
+            </li>           
+            <li className="nav-item">
+              <Link className="nav-link" to="about">
+                عن المنصة 
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                العروض
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="contact-us">
                 اتصل بنا
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                الشكاوى
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

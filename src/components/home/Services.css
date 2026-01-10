@@ -14,6 +14,8 @@
   padding: 2em;
   transition: 1s;
   color: var(--success-dark);
+  max-width: 300px;
+  margin: auto;
 }
 #services .card:hover {
   background-color: var(--success-light) !important;
@@ -22,9 +24,18 @@
   box-shadow: 5px 5px 10px black;
   font-weight: 100;
 }
-#services .card:hover .count {
+#services .card:hover .service-count {
   transition: 0.3s;
-  font-weight: 900;
+  font-weight: 900;  
+  color: var(--success-light) !important;
+  background-color: white !important;
+}
+.service-count {
+    width: 50px;
+    padding : 10px;
+    margin: auto;
+    box-shadow:  var(--shadow-md);
+
 }
 #services .card:hover h3 {
   color: var(--success-dark-color) !important;  
