@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import Home from "./pages/Home/SiteHome";
-import HomeMain from './pages/Home/Partials/Home'
+import HomeMain from "./pages/Home/Partials/Home";
 import Login from "./pages/Home/Partials/Login";
 import Register from "./pages/Home/Partials/Register";
 import ContactUs from "./pages/Home/Partials/Contactus";
@@ -19,7 +19,6 @@ import ProviderServices from "./pages/Provider/Partials/Services";
 import ProtectComponent from "./components/Security/ProtectComponent";
 import NotFound404 from "./pages/NotFound404";
 import About from "./pages/Home/Partials/About";
-
 
 const router = createBrowserRouter([
   {
@@ -44,7 +43,12 @@ const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Profile />,
+
+        element: (
+          <ProtectComponent userType="tourist">
+            <Profile />,
+          </ProtectComponent>
+        ),
       },
       {
         path: "about",

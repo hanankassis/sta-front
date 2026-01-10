@@ -101,7 +101,7 @@ export default function HomeNav() {
                   </Link>
                 </li>   
                   ):(
-                    <Link className="dropdown-item " to="/preferences">
+                    <Link className="dropdown-item " to="/profile">
                     إدارة ملفك الشخصي
                   </Link>
                   )}             

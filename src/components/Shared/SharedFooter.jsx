@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import "./SharedFooter.css";
 export default function SharedFooter() {
   return (
-    <footer id="footer" className="container-fluid text-white-50 footer pt-5">
-      <hr />
+    <footer id="footer" className="container-fluid text-white-50 footer">
       <div className="container">
         <div className="footer-grid py-3">
           <div className="footer-section">
@@ -75,7 +74,7 @@ export default function SharedFooter() {
         </div>
 
         <div className="footer-bottom">
-          <p className="my-0 py-4">
+          <p className="my-0 py-3">
             {" "}
             منصة STA - 2025 جميع الحقوق محفوظة &copy;{" "}
           </p>

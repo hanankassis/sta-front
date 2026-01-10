@@ -38,12 +38,14 @@
     var(--success-light)
   );
   --radial: radial-gradient(
-    var(--secondary-light) ,
-    var(--success-light-x2) ,
-    var(--success-dark)  70%
+    var(--secondary-light)  , 
+    var(--success-light-x2) , 60% ,
+    var(--success-dark) 70%
   );
 }
-
+.h-80vh{
+  min-height: 70vh;
+}
 .table-success-light > td{
 background-color: var(--success-light-x3) !important;
 } 

@@ -10,7 +10,7 @@ export default function CategoryNode({ node, onAdd }) {
 
         <div className="btn-group btn-group-sm">
           <button
-            className="btn btn-warning"
+            className="btn btn-warning ms-2"
             title="إضافة"
             onClick={() => onAdd(node)}
           >
