@@ -149,11 +149,14 @@ a:hover {
 .select-multiple {
   color: black !important;
 }
-.main-container {
+.radial {
   background-image: var(--radial);   
+}
+.main-container {  
   font-size: 1em;
   min-height: 100vh;
   color: var(--success-dark);
+  background-color: var(--success-light);
 }
 .main-container form {
   border: solid 1px var(--secondary-light) !important;
@@ -231,4 +234,9 @@ a:hover {
 }
 .contact-us h4 , .contact-us a{
   color: var(--success-dark);
+}
+
+
+.accordion-button:not(.collapsed){
+  background-color: var(--success-light-x2);
 }

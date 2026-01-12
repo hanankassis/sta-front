@@ -6,9 +6,7 @@ const AdminSidebar = ({
 }) => {
   const items = [
     {  label: "لوحة القيادة", icon: "🏠" , path:"/admin"},
-    {  label: "تصنيف الخدمات", icon: "🧾" ,  path:"categories"},
-    { label: "إدارة التفضيلات", icon: "💜" , path:"preferences/favor"},
-    { label: "إدارة الحالات الصحية", icon: "👩‍⚕️" ,path:"preferences/medical"},
+    {  label: "تصنيف الخدمات", icon: "🧾" ,  path:"categories"},    
     { label: " المزودين قيد الانتظار", icon: "👥" ,path:"providers/no"},
     // { label: " إعدادات المنصة", icon: "⚙️" ,path:"/#"},
   ];

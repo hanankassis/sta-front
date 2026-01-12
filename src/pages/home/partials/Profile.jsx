@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { categories as apiCategories } from "../../../services/api";
-import { profile as apiProfile } from "../../../services/api";
+import { tourist as apiTourist } from "../../../services/api";
 import modals from "../../../services/modals";
 import CategoryNode from "../../../components/Home/Tree/CategoryNode";
 import SidebarTree from "../../../components/Home/Tree/SideTree";
@@ -29,9 +29,9 @@ export default function CategoryTreePage() {
       setLoading(false);
     };
 
-    const loadProfile = async () => {
+    const loadtourist = async () => {
       setLoading(true);
-      const { data, result, text } = await apiProfile.get();
+      const { data, result, text } = await apiTourist.getProfile();
       console.log(data);
       if (result) {
         console.log(data);
@@ -43,7 +43,7 @@ export default function CategoryTreePage() {
       setLoading(false);
     };
     loadTree();
-    loadProfile();
+    loadtourist();
   }, []);
 
   const handleAdd = (node) => {
@@ -57,7 +57,7 @@ export default function CategoryTreePage() {
   const handleSave = async() => {
     const ids = selectedCategories.map(item => item.id);
     console.log("ids" ,ids);
-    const {result  , text} = await apiProfile.update({ categories:ids});
+    const {result  , text} = await apiTourist.updateProfile({ categories:ids});
     if (result)
       modals.success("تم حفظ ")
     else

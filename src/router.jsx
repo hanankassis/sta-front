@@ -19,6 +19,8 @@ import ProviderServices from "./pages/Provider/Partials/Services";
 import ProtectComponent from "./components/Security/ProtectComponent";
 import NotFound404 from "./pages/NotFound404";
 import About from "./pages/Home/Partials/About";
+import StartTrip from "./pages/Home/Partials/StartTrip";
+import TourHistory from "./pages/Home/Partials/TourHistory";
 
 const router = createBrowserRouter([
   {
@@ -38,8 +40,18 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "start-tour",
-        element: <Profile />,
+        path: "start-tour",        
+        element: 
+          <ProtectComponent userType="tourist">        
+            <StartTrip />
+          </ProtectComponent>            
+      },
+      {
+        path: "tour-history",        
+        element: 
+          <ProtectComponent userType="tourist">        
+            <TourHistory />
+          </ProtectComponent>            
       },
       {
         path: "profile",

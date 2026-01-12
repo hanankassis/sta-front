@@ -101,9 +101,15 @@ export default function HomeNav() {
                   </Link>
                 </li>   
                   ):(
+                    <>
                     <Link className="dropdown-item " to="/profile">
                     إدارة ملفك الشخصي
                   </Link>
+                    <Link className="dropdown-item " to="/tour-history">
+                    رحلاتك السابقة
+                  </Link>
+                    </>
+
                   )}             
                 
                 <li>

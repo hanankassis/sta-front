@@ -1,6 +1,6 @@
 const ContactUs = () => {
     return (
-    <div className="main-container d-flex justify-content-center align-items-center ">
+    <div className="radial main-container d-flex justify-content-center align-items-center ">
       <div className="container contact-us mt-5">
         <h3 className="mb-3  text-center mt-2">
           يمكنك التواصل معنا عبر الفنوات التالية
