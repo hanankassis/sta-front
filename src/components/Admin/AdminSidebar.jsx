@@ -8,6 +8,7 @@ const AdminSidebar = ({
     {  label: "لوحة القيادة", icon: "🏠" , path:"/admin"},
     {  label: "تصنيف الخدمات", icon: "🧾" ,  path:"categories"},    
     { label: " المزودين قيد الانتظار", icon: "👥" ,path:"providers/no"},
+    { label: "الشكاوى", icon: "👥" ,path:"complaint"},
     // { label: " إعدادات المنصة", icon: "⚙️" ,path:"/#"},
   ];
 

@@ -3,9 +3,9 @@ import ProtectComponent from "./components/Security/ProtectComponent";
 
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import AdminHome from "./pages/Admin/Partials/Home";
-import Perefernces from "./pages/Admin/Partials/Preferences";
 import Categories from "./pages/Admin/Partials/Categories";
 import Providers from "./pages/Admin/Partials/Providers";
+import Complaints from "./pages/Admin/Partials/Complaints";
 
 import ProviderDashboard from "./pages/Provider/ProviderDashboard";
 import ProviderHome from "./pages/Provider/Partials/Home";
@@ -91,10 +91,10 @@ const router = createBrowserRouter([
       {
         path: "categories",
         element: <Categories />,
-      },
+      },      
       {
-        path: "preferences/:type",
-        element: <Perefernces />,
+        path: "complaint",
+        element: <Complaints />,
       },
       {
         path: "providers/:accepted",
@@ -117,11 +117,7 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <ProviderServices />,
-      },
-      {
-        path: "preferences/:type",
-        element: <Perefernces />,
-      },
+      },     
       {
         path: "providers",
         element: <Providers />,
