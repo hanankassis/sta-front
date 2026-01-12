@@ -114,10 +114,19 @@ background-color: var(--secondary-light) !important;
   left: 20px;
 }
 .navbar a,
+.dropdown-item a, 
 .navbar button {
   color: white !important;
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 1em;
+  text-align: right ;
+
+}
+
+.dropdown-item,
+.dropdown-menu button  { 
+  font-weight: 400 !important;
+  font-size: 1em;
 }
 .navbar a:hover,
 .navbar button:hover,
