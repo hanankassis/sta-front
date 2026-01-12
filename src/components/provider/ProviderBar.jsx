@@ -1,11 +1,12 @@
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 const ProviderBar = () => {
   const items = [
     {  label: "الصفحة الرئيسية", icon: "🏠" , path:"/provider"},
     {  label: "إدارة التصنيفات", icon: "🍀" ,  path:"categories"},
     {  label: "إدارة الخدمات", icon: "🕎" ,  path:"services"},
-    {  label: "إدارة الروابط", icon: "🏹" ,  path:"apis"},
+    // {  label: "إدارة الروابط", icon: "🏹" ,  path:"apis"},
+    {  label: "استعراض التقييمات", icon: "⚖" ,  path:"ratings"},
     {  label: "استعراض التعليقات", icon: "📝" ,  path:"comments"},
   ];
 

@@ -1,11 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-
-import Home from "./pages/Home/SiteHome";
-import HomeMain from "./pages/Home/Partials/Home";
-import Login from "./pages/Home/Partials/Login";
-import Register from "./pages/Home/Partials/Register";
-import ContactUs from "./pages/Home/Partials/Contactus";
-import Profile from "./pages/Home/Partials/Profile";
+import ProtectComponent from "./components/Security/ProtectComponent";
 
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import AdminHome from "./pages/Admin/Partials/Home";
@@ -16,11 +10,21 @@ import Providers from "./pages/Admin/Partials/Providers";
 import ProviderDashboard from "./pages/Provider/ProviderDashboard";
 import ProviderHome from "./pages/Provider/Partials/Home";
 import ProviderServices from "./pages/Provider/Partials/Services";
-import ProtectComponent from "./components/Security/ProtectComponent";
+import Comments from "./pages/Provider/Partials/Comments";
+import Ratings from "./pages/Provider/Partials/Ratings";
+import ProviderCategories from "./pages/Provider/Partials/Categories";
+
+import Home from "./pages/Home/SiteHome";
+import HomeMain from "./pages/Home/Partials/Home";
+import Login from "./pages/Home/Partials/Login";
+import Register from "./pages/Home/Partials/Register";
+import ContactUs from "./pages/Home/Partials/Contactus";
+import Profile from "./pages/Home/Partials/Profile";
 import NotFound404 from "./pages/NotFound404";
 import About from "./pages/Home/Partials/About";
 import StartTrip from "./pages/Home/Partials/StartTrip";
 import TourHistory from "./pages/Home/Partials/TourHistory";
+
 
 const router = createBrowserRouter([
   {
@@ -121,6 +125,18 @@ const router = createBrowserRouter([
       {
         path: "providers",
         element: <Providers />,
+      },
+      {
+        path: "ratings",
+        element: <Ratings />,
+      },
+      {
+        path: "categories",
+        element: <ProviderCategories />,
+      },
+      {
+        path: "comments",
+        element: <Comments />,
       },
     ],
   },

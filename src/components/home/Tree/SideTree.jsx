@@ -14,7 +14,7 @@ export default  function SidebarTree({ selectedCategories, onRemove , onSave }) 
         </li>
       ))}
       <div className="text-center mt-2">
-        <button className="btn btn-success" onClick={onSave}>خفظ</button>
+        <button className="btn btn-success" onClick={onSave}>حفظ</button>
       </div>
     </ul>
   );

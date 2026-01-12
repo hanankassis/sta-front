@@ -5,18 +5,18 @@ import modals from "../../../services/modals";
 
 export default function Comments() {
   const [loading, setLoading] = useState(false);
-  const [comments, setComments] = useState([]);
+  const [ratings, setRatings] = useState([]);
 
   useEffect(() => {
-    async function loadComments() {
+    async function loadRatings() {
       setLoading(true);
-      const { result, data, text } = await apiProvider.comments();
-      if (result) setComments(Array.isArray(data) ? data : []);
+      const { result, data, text } = await apiProvider.ratings();
+      if (result) setRatings(Array.isArray(data) ? data : []);
       else modals.error(text);
       setLoading(false);
     }
 
-    loadComments();
+    loadRatings();
   }, []);
 
   return (
@@ -25,10 +25,10 @@ export default function Comments() {
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "space-between",          
         }}
       >
-        <h4 className="text-success">تعليقات الزبائن</h4>
+        <h4 className="text-success">تقييمات الزبائن</h4>
       </div>
 
       <div style={{ marginTop: 12 }}>
@@ -44,30 +44,18 @@ export default function Comments() {
           <table className="table">
             <thead>
               <tr>
-                <th>التعليق</th>
+                <th>التقييم</th>
                 <th>الخدمة</th>
-                <th> الزبون</th>
-                <th> النوع</th>
-                <th>التاريخ</th>
               </tr>
             </thead>
             <tbody>
-              {comments.map((s) => (
+              {ratings.map((s) => (
                 <tr key={s.id}>
-                  <td>{s.comment}</td>
-                  <td>{s.tourist.name}</td>
-                  <td>{s.service.name}</td>
-                  <td
-                    className={`${
-                      s.type == "positive" ? "text-success" : "text-danger"
-                    }`}
-                  >
-                    {s.type}
-                  </td>
-                  <td>{s.created_at}</td>
+                  <td>{s.avg_rating}</td>
+                  <td>{s.name}</td>                  
                 </tr>
               ))}
-              {comments.length === 0 && !loading && (
+              {ratings.length === 0 && !loading && (
                 <tr>
                   <td colSpan={2} className="empty-state">
                     لا توجد بيانات

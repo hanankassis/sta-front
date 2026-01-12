@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import {auth } from '../../services/api';
+import { auth } from "../../services/api";
 import { useEffect } from "react";
 
 export default function HomeNav() {
@@ -22,7 +22,8 @@ export default function HomeNav() {
         document.getElementById("MainNavBar").style.backgroundColor =
           "var(--success-light-opacity)";
       } else {
-        document.getElementById("MainNavBar").style.backgroundColor = "transparent";
+        document.getElementById("MainNavBar").style.backgroundColor =
+          "transparent";
       }
     };
 
@@ -35,7 +36,10 @@ export default function HomeNav() {
   }, []);
 
   return (
-    <nav id="MainNavBar" className="navbar navbar-expand-lg  fixed-top  fs-6 pt-3">
+    <nav
+      id="MainNavBar"
+      className="navbar navbar-expand-lg  fixed-top  fs-6 pt-3"
+    >
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -51,18 +55,18 @@ export default function HomeNav() {
         <div className="collapse navbar-collapse text-end" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">                
+              <Link className="nav-link" to="/">
                 الرئيسية
               </Link>
-            </li>           
+            </li>
             <li className="nav-item">
-              <Link className="nav-link" to="profile">                
+              <Link className="nav-link" to="profile">
                 الخدمات
               </Link>
-            </li>           
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="about">
-                عن المنصة 
+                عن المنصة
               </Link>
             </li>
             <li className="nav-item">
@@ -72,12 +76,12 @@ export default function HomeNav() {
             </li>
           </ul>
         </div>
-        <ul className="navbar-nav align-items-center">          
+        <ul className="navbar-nav align-items-center">
           {user ? (
             <li className="nav-item dropdown ms-7">
               <a
                 className="nav-link dropdown-toggle"
-                href="#"  
+                href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -85,36 +89,33 @@ export default function HomeNav() {
                 {user}
               </a>
               <ul className="dropdown-menu  bg-success-dark">
-                <li>
-                  
-                </li>                
-                  {type=='admin' ? (
-                <li>
-                  <Link className="dropdown-item " to="/admin">
-                    إدارة الموقع
-                  </Link>
-                </li>   
-                  ): type=='provider' ? (
-                <li>
-                  <Link className="dropdown-item " to="/provider">
-                    إدارة خدماتك
-                  </Link>
-                </li>   
-                  ):(
-                    <li>
+                <li></li>
+                {type == "admin" ? (
+                  <li>
+                    <Link className="dropdown-item " to="/admin">
+                      إدارة الموقع
+                    </Link>
+                  </li>
+                ) : type == "provider" ? (
+                  <li>
+                    <Link className="dropdown-item " to="/provider">
+                      إدارة خدماتك
+                    </Link>
+                  </li>
+                ) : (
+                  <li>
                     <Link className="dropdown-item " to="/profile">
-                    إدارة ملفك الشخصي
-                  </Link>
+                      إدارة ملفك الشخصي
+                    </Link>
                     <Link className="dropdown-item " to="/tour-history">
-                    رحلاتك 
-                  </Link>
+                      رحلاتك
+                    </Link>
                     <Link className="dropdown-item " to="/start-tour">
-                    رحلة جديدة
-                  </Link>
-                    </li>
+                      رحلة جديدة
+                    </Link>
+                  </li>
+                )}
 
-                  )}             
-                
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
@@ -137,13 +138,11 @@ export default function HomeNav() {
               </>
             </li>
           )}
-         
         </ul>
-
       </div>
-        <Link className="navbar-brand position-fixed top-0" to="/" >
-              <img  src="/logo.png" alt="sta-logo" width="80" />
-            </Link>
+      <Link className="navbar-brand position-fixed top-0" to="/">
+        <img src="/logo.png" alt="sta-logo" width="80" />
+      </Link>
     </nav>
   );
 }
